@@ -54,9 +54,7 @@ import { DockModule } from 'primeng/dock';
     PasswordModule,
     InputTextModule,
     SidebarModule,
-
-    GoogleMapsModule
-
+    GoogleMapsModule,
     DockModule
 
   ],
