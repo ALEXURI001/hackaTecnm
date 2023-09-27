@@ -10,11 +10,53 @@ width="100%"
 [position]="{lat: marker.latitud, lng : marker.longitud}"
 [label]="{color: 'red', text: marker.nombre}"
 [title]="marker.nombre"
-[icon]="marker.tipo == 'Playas y Cuerpos de agua'? 'https://img.icons8.com/color/344/40/potters-wheel.png' : 'https://img.icons8.com/3d-fluency/94/restaurant.png' "
+[icon]="marker.tipo == 'Playas y Cuerpos de agua'? 'https://img.icons8.com/color/344/40/potters-wheel.png' : 'https://img.icons8.com/3d-fluency/40/restaurant.png' "
 #somemarker="mapMarker"
-(mapClick)="openInfoWindow(somemarker, marker.nombre)">
+(mapClick)="openInfoWindow(somemarker, marker)">
 </map-marker>
 
-<map-info-window>{{infoContent}}</map-info-window>
+<map-info-window>
+
+    <h3>{{titulo}}</h3>
+    <p>{{descripcion}}</p>
+
+    <div class="mb-5">
+        <h5>Horario:</h5>
+        <p>{{horario}}</p>
+        <h5>Direccion:</h5>
+        <p>{{direccion}}</p>
+        <a 
+        *ngFor="let link of links"
+        class="btn btn-primary" [href]="link" role="button">Link</a>
+    </div>
+
+    <div class="mb-2">
+
+
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active" *ngFor="let imagen of imagenes2">
+                <img [src]='imagen' class="d-block w-100" alt="...">
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+
+    
+    <button type="button" class="btn btn-success">Ver Mas...</button>
+
+    
+
+
+</map-info-window>
 
 </google-map>
