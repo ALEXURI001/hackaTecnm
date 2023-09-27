@@ -19,22 +19,22 @@ export class ButtonNavigationBarComponent {
             {
                 label: 'Mapa interactivo',
                 icon: '../../assets/imgsNav/mapa.png',
-                routerLink: 'inventory'
+                routerLink: 'map'
             },
             {
                 label: 'grupos',
                 icon: '../../assets/imgsNav/fuego.png',
-                routerLink: 'loansAndRepayments'
+                routerLink: 'grupos'
             },
             {
                 label: 'Lugares cercanos',
                 icon: '../../assets/imgsNav/cercano.png',
-                routerLink: 'consults'
+                routerLink: 'lugaresCercanos'
             },
             {
                 label: 'Mi tucan guía',
                 icon: '../../assets/imgsNav/tucan.png',
-                routerLink: 'loansAndRepayments'
+                routerLink: 'tucanGuia'
             },
 
         ];
