@@ -17,20 +17,24 @@ export class ButtonNavigationBarComponent {
     ngOnInit() {
         this.items = [
             {
-                label: 'grupos',
-                icon: '../../assets/imgsNav/fuego.png'
+                label: 'Mapa interactivo',
+                icon: '../../assets/imgsNav/mapa.png',
+                routerLink: 'inventory'
             },
             {
-                label: 'Mapa interactivo',
-                icon: '../../assets/imgsNav/mapa.png'
+                label: 'grupos',
+                icon: '../../assets/imgsNav/fuego.png',
+                routerLink: 'loansAndRepayments'
             },
             {
                 label: 'Lugares cercanos',
-                icon: '../../assets/imgsNav/cercano.png'
+                icon: '../../assets/imgsNav/cercano.png',
+                routerLink: 'consults'
             },
             {
                 label: 'Mi tucan guía',
-                icon: '../../assets/imgsNav/tucan.png'
+                icon: '../../assets/imgsNav/tucan.png',
+                routerLink: 'loansAndRepayments'
             },
 
         ];
