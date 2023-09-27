@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { UsersComponent } from '../modules/users/users.component';
+import { MapaInteractivoComponent } from '../modules/mapa-interactivo/mapa-interactivo.component';
 
 const routes: Routes = [
 
@@ -10,13 +11,13 @@ const routes: Routes = [
     children:[
 
       {
-        path: 'loansAndRepayments',
-      },
-      {
         path: 'users',
         component: UsersComponent
       },
-    
+      {
+        path: 'map',
+        component:MapaInteractivoComponent
+      }
     ]
   }
 
