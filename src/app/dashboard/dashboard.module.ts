@@ -14,15 +14,19 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ToastModule } from 'primeng/toast';
 import { InputSwitchModule } from 'primeng/inputswitch';
 
-import { UsersComponent } from '../modules/users/users.component';
+
 import { PasswordModule } from 'primeng/password';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { SidebarModule } from 'primeng/sidebar';
+import { MapaInteractivoComponent } from '../modules/mapa-interactivo/mapa-interactivo.component';
+import { GruposViajerosComponent } from '../modules/grupos-viajeros/grupos-viajeros.component';
+import { LugaresCercanosComponent } from '../modules/lugares-cercanos/lugares-cercanos.component';
+import { TucanGuiaComponent } from '../modules/tucan-guia/tucan-guia.component';
 @NgModule({
   declarations: [
-    UsersComponent,
-
-   
+    GruposViajerosComponent,
+    LugaresCercanosComponent,
+    TucanGuiaComponent,
   ],
   imports: [
     CommonModule,
