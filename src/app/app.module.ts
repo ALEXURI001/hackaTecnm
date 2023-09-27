@@ -17,8 +17,14 @@ import { PasswordModule } from 'primeng/password';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { SidebarModule } from 'primeng/sidebar';
+
+import { MapaInteractivoComponent } from './modules/mapa-interactivo/mapa-interactivo.component';
+import {GoogleMapsModule} from '@angular/google-maps'; 
+
+
 import { ButtonNavigationBarComponent } from './components/button-navigation-bar/button-navigation-bar.component';
 import { DockModule } from 'primeng/dock';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +32,9 @@ import { DockModule } from 'primeng/dock';
     DashboardComponent,
     AuthComponent,
     NavbarComponent,
+
+    MapaInteractivoComponent,
+
     ButtonNavigationBarComponent,
     
 
@@ -45,7 +54,11 @@ import { DockModule } from 'primeng/dock';
     PasswordModule,
     InputTextModule,
     SidebarModule,
+
+    GoogleMapsModule
+
     DockModule
+
   ],
   providers: [
     MessageService,
