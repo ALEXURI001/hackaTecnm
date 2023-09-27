@@ -1,6 +1,6 @@
 
 
-    <p-dock [model]="items" [position]="position" [style]="{'position':'fixed', 'background':'white', 'height':'4.5rem'}">
+    <p-dock [model]="items" [position]="position" [style]="{'position':'fixed', 'background-color':'white', 'height':'4.5rem', 'z-index':'4'}">
         <ng-template pTemplate="item" let-item >
             <img [src]="item.icon" [alt]="item.label" width="50%" />
         </ng-template>
