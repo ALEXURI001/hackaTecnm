@@ -17,8 +17,13 @@ import { PasswordModule } from 'primeng/password';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { SidebarModule } from 'primeng/sidebar';
+
 import { MapaInteractivoComponent } from './modules/mapa-interactivo/mapa-interactivo.component';
 import {GoogleMapsModule} from '@angular/google-maps'; 
+
+
+import { ButtonNavigationBarComponent } from './components/button-navigation-bar/button-navigation-bar.component';
+import { DockModule } from 'primeng/dock';
 
 
 @NgModule({
@@ -27,7 +32,10 @@ import {GoogleMapsModule} from '@angular/google-maps';
     DashboardComponent,
     AuthComponent,
     NavbarComponent,
+
     MapaInteractivoComponent,
+
+    ButtonNavigationBarComponent,
     
 
     
@@ -46,7 +54,11 @@ import {GoogleMapsModule} from '@angular/google-maps';
     PasswordModule,
     InputTextModule,
     SidebarModule,
+
     GoogleMapsModule
+
+    DockModule
+
   ],
   providers: [
     MessageService,
