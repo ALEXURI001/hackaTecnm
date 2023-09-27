@@ -1,0 +1,46 @@
+    <!--DATOS ESPECIFICOS-->
+    <div class="d-flex flex-column flex-sm-row">
+        <div class="card w-50 m-1 style_Card">
+            <h3>Datos Fijos</h3>
+        </div>
+        <div class="card w-50 m-1 style_Card">
+            <h3>Etiqueta MARC</h3>
+        </div>
+    </div>
+    <!--TABLA-->
+    <div class="p-1">
+
+        <p-table [paginator]="true" [rows]="5" [showCurrentPageReport]="true" dataKey="code"
+            styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="caption">
+
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Número de ejemplar</th>
+                    <th>Número de adquisición</th>
+                    <th>Título de edición</th>
+                    <th>Fecha</th>
+                    <th>Volumen</th>
+                    <th>Tomo</th>
+                    <th>Número de copia</th>
+                    <th>Nota de número</th>
+                    <th>Estante</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{ product.code }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.name }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>

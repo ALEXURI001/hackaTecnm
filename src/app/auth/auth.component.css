@@ -1,0 +1,103 @@
+html,
+body {
+  height: 100vh !important;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background-color: #ebebeb;
+  min-height: 100vh;
+}
+
+.cuerpo__animacion{
+  width: 75%;
+  height: 75vh;
+  background: rgba(255, 255, 255, 0.15);
+  margin: auto;
+  border-radius: 1.5rem;
+  background-color: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+  color: black;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.img-logo{
+background-image: url('../../assets/fondo-auth.jpg');
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+width: 50%;
+border-radius: 8px 0 0 8px;
+}
+
+.logo{
+ width: 10%;
+}
+
+.img-responsive{
+  display: none;
+}
+
+.form-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.form-login div{
+  width: 80%;
+  margin: 8px;
+}
+
+.animacion{
+  border: none;
+  box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
+      rgba(0, 0, 0, 0.1);
+  border: 0 none;
+  background: #ebf5fc;
+}
+
+@media screen and (max-width: 768px) {
+ 
+  .cuerpo__animacion {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 13px 0;
+  } 
+  .form-login{
+    width: 100%;
+  }
+  .form-login div{
+    width: 80%;
+    margin: 8px;
+  }
+  .img-responsive{
+    display: flex;
+    width: 50%;
+  }
+}

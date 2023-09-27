@@ -1,0 +1,14 @@
+.style__body{
+    display: flex;
+    flex-direction: row;
+}
+.style_Card h3{
+   text-align: center;
+   height: 25vh;
+}
+
+@media screen and (max-width: 768px) {
+    .style_Card{
+        width: 95% !important;
+    }
+}

@@ -1,0 +1,189 @@
+<div class="ajustable mt-2">
+  <div class="card card-ajustable">
+    <div class="card-header">
+      <h3 class="m-2 text-uppercase d-flex justify-content-center ">REGISTRO DE PRÉSTAMO</h3>
+    </div>
+    <div class="card-body">
+
+      <div class="p-2 text-center">
+        <div class="row row-cols-auto">
+
+
+          <div class="card-body ajuste text-black mb-5 col" style="background: rgb(43, 81, 90); border-radius: 5px;">
+            
+          <form (ngSubmit)="search()" [formGroup]="user">
+            <h3 style="color: #fff;">Ingresar datos</h3>
+            
+              <div class="input-group mb-2">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInputGroup1" placeholder="20530202"
+                    formControlName="noControl">
+                  <label for="floatingInputGroup1">Número de cliente</label>
+                </div>
+                <a href=""></a>
+                <span class="input-group-text"><a href=""><img
+                      src="https://cdn-icons-png.flaticon.com/512/2521/2521826.png" width="35px"></a></span>
+              </div>
+          
+            <div class="form-floating mb-2">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="apellidoMate"
+               formControlName="noAdquisicion">
+              <label for="floatingInput">Número de adquisición</label>
+            </div>
+            <button class="w-100 btn btn-lg" type="submit" style="background-color: rgb(69, 175, 189); color: #fff;" [disabled]="user.invalid">Buscar</button>
+          </form>
+          </div>
+        
+          <div class="card-body ajuste text-black col">
+
+            <h3>Datos del prestatario</h3>
+
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="apellidoPate"
+                disabled="true" [(ngModel)]="nombre">
+              <label for="floatingInput">Nombre</label>
+            </div>
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="apellidoMate"
+                disabled="true" >
+              <label for="floatingInput">Número de cliente</label>
+            </div>
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="nombre"
+                disabled="true" [(ngModel)]="carrera">
+              <label for="floatingInput">Carrera</label>
+            </div>
+
+          </div>
+
+          <div class="card-body ajuste text-black col">
+
+            <h3>Datos del recurso bibliográfico</h3>
+
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="apellidoPate"
+                disabled="true" >
+              <label for="floatingInput">Tipo de recurso</label>
+            </div>
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="apellidoPate"
+                disabled="true" >
+              <label for="floatingInput">Número de ficha</label>
+            </div>
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="apellidoPate"
+                disabled="true" >
+              <label for="floatingInput">Número de adquisición</label>
+            </div>
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="apellidoMate"
+                disabled="true" [(ngModel)]="titulo">
+              <label for="floatingInput">Titulo</label>
+            </div>
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="nombre"
+                disabled="true" [(ngModel)]="autor">
+              <label for="floatingInput">Autor</label>
+            </div>
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="nombre"
+                disabled="true" [(ngModel)]="clasificacion">
+              <label for="floatingInput">Clasificación CL</label>
+            </div>
+
+          </div>
+
+          <div class="card-body ajuste text-black col">
+
+            <h3>Ingresar datos de devolución</h3>
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="nombre"
+                disabled="true" [(ngModel)]="fechaSalida">
+              <label for="floatingInput">Fecha salida</label>
+            </div>
+
+            <div class="input-group mb-2">
+              <div class="input-group-text" style="width: 8rem; font-weight: 700;">Fecha entrega</div>
+              <input type="date" class="form-control" id="autoSizingInputGroup" style="height: 3rem;"
+                [(ngModel)]="fechaEntrega">
+            </div>
+
+            <div class="form-floating">
+              <button type="button" class="w-100 btn btn-success mb-1" (click)="register()">Prestar</button>
+              <button type="button" class="w-100 btn btn-danger" (click)="cancelar()">Cancelar</button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!--
+
+<section>
+
+  <div class="container py-5 h-100">
+
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4"><br>
+          <h3 class="mb-5 text-uppercase d-flex justify-content-center ">REGISTRO DE CREDENCIAL</h3>
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <div class="d-flex justify-content-center ">
+                <img alt="ESTUDIANTE" class="alumno mb-4">
+              </div>
+
+              <div class="form-floating buscar">
+                <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="noControl"
+                  autofocus>
+                <label for="floatingInput">Número de Control</label>
+                <br>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Buscar</button>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body  text-black">
+
+                <h3>Datos del Alumno</h3>
+
+
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="apellidoPate"
+                    disabled="true">
+                  <label for="floatingInput">Apellido Paterno</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="apellidoMate"
+                    disabled="true">
+                  <label for="floatingInput">Apellido Materno</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="nombre"
+                    disabled="true">
+                  <label for="floatingInput">Nombre</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="12345678" name="codigo">
+                  <label for="floatingInput">Código tarjeta</label>
+                </div>
+                <br>
+                <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Guardar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>-->

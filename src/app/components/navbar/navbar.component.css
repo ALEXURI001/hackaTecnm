@@ -1,0 +1,27 @@
+
+
+.agree{
+    cursor: default;
+    transition: all 400ms ease-in-out;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.agree:hover{
+    border-radius: 3px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+    transform: translateY(-4%);
+    
+}
+
+
+.nav-item{
+    cursor: default;
+    transition: all 200ms ease-in-out;
+
+}
+
+.nav-item:hover{
+    font-size: 1.1rem;
+    background: #7BB1F5;
+}
+

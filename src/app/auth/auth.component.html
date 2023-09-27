@@ -1,0 +1,52 @@
+<body class="text-center">
+
+
+    <div class="flex d-flex flex-row cuerpo__animacion">
+        <div class="img-logo">
+
+        </div>
+        <div class="form-login">
+
+            <img class="mb-4 img-responsive"
+                src="http://www.itcancun.edu.mx/wp-content/uploads/2017/09/LOGO-ITCANCUN-MARCA-REGISTRADA.png"
+                alt="TECNM">
+
+            <h2>ADMIN GABI</h2>
+
+            <h3 class="h3 mb-3 fw-normal">Ingresar</h3>
+
+
+            <div class="w-80">
+                <span class="p-float-label mb-3">
+                    <input pInputText id="username" [(ngModel)]="username" [style]="{'width':'100%'}" />
+                    <label htmlFor="username">Username</label>
+                </span>
+            </div>
+
+            <div class="w-80">
+                <span class="p-float-label">
+                    <p-password [(ngModel)]="password" [feedback]="false" [style]="{'width':'100%'}"
+                        [inputStyle]="{'width':'100%'}" [toggleMask]="true"></p-password>
+                    <label for="password">Password</label>
+                </span>
+            </div>
+
+            <div class="w-80">
+
+                    <p-button label="Iniciar Sesión" styleClass="p-button-raised" (click)="login()" [style]="{'width':'100%'}"></p-button>
+
+            </div>
+
+            <div class="flex d-flex flex-row justify-content-center align-items-center">
+                <p class="mt-2 text-muted" style="font-size: 12px;">Copyright &copy; 2023 Tecnm Cancún</p>
+                <img class="ms-3 logo"
+                    src="http://www.itcancun.edu.mx/wp-content/uploads/2017/09/LOGO-ITCANCUN-MARCA-REGISTRADA.png"
+                    alt="TECNM">
+            </div>
+
+
+        </div>
+    </div>
+
+
+</body>
