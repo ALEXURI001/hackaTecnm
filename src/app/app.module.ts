@@ -17,7 +17,8 @@ import { PasswordModule } from 'primeng/password';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { SidebarModule } from 'primeng/sidebar';
-
+import { ButtonNavigationBarComponent } from './components/button-navigation-bar/button-navigation-bar.component';
+import { DockModule } from 'primeng/dock';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SidebarModule } from 'primeng/sidebar';
     DashboardComponent,
     AuthComponent,
     NavbarComponent,
+    ButtonNavigationBarComponent,
     
 
     
@@ -42,7 +44,8 @@ import { SidebarModule } from 'primeng/sidebar';
     DropdownModule,
     PasswordModule,
     InputTextModule,
-    SidebarModule
+    SidebarModule,
+    DockModule
   ],
   providers: [
     MessageService,
