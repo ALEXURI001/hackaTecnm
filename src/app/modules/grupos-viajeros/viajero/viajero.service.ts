@@ -15,9 +15,10 @@ export class ViajeroService {
   }
 
   filter(destino: string){
-    const url= `${environment.urlBase}/usuarios/destino/${destino}`;
+    const url= `${environment.urlBase}/usuarios/destino/`;
+    const body = {destino}
     console.log(url);
-    return this.http.get<Viajero>(url)
+    return this.http.post<Viajero>(url,body)
   }
 
 

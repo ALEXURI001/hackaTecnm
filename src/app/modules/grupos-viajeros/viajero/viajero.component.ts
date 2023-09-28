@@ -78,6 +78,7 @@ export class ViajeroComponent {
         console.log(resp);
         this.resultados = resp.resultado;
         console.log(this.resultados);
+        
 
       }
     )
