@@ -59,11 +59,6 @@ export class AuthComponent {
       {name: 'Veracruz'},
       {name: 'Yucatán'},
       {name: 'Zacatecas'},
-
-
-
-
-
   ];
   }
 
