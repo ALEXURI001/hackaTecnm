@@ -55,9 +55,7 @@ import { TucanGuiaComponent } from './modules/tucan-guia/tucan-guia.component';
     PasswordModule,
     InputTextModule,
     SidebarModule,
-
     GoogleMapsModule,
-
     DockModule
 
   ],
