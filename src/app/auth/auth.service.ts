@@ -10,6 +10,8 @@ import { environment } from 'src/enviroments/environment';
 })
 export class AuthService {
 
+  idUser: any = "";
+
   constructor(private http: HttpClient) { }
 
 
@@ -17,9 +19,11 @@ export class AuthService {
     const url = `${environment.urlBase}/auth/login`
 
     const body = {nombreUsuario, contrasena}
+
     console.log(body);
     
     return this.http.post<Login>(url,body)
+    
 
   }
 

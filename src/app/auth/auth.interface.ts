@@ -1,11 +1,19 @@
 export interface Login {
-    accessToken: string;
-    status:      boolean;
+    status:  boolean;
+    token:   string;
+    user:    User;
     message: string;
 }
 
-export interface Body {
-    name:     string;
-    username: string;
-    password: string;
+export interface User {
+    id:             number;
+    nombres:        string;
+    apellidos:      string;
+    nombreUsuario:  string;
+    descripcion:    string;
+    destino:        string;
+    permitirBuscar: boolean;
+    contrasena:     string;
+    imagen:         null;
+    deletedAt:      null;
 }
