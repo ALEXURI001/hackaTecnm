@@ -36,6 +36,7 @@ nuevoMensaje(id: number, msj:Chat){
   return this.http.post(url, msj)
 }
 
+
 unirse(id: number, usuarios: number []){
   const url= `${environment.urlBase}/grupos/${id}`
   const body = {usuarios};

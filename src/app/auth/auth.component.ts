@@ -98,6 +98,7 @@ export class AuthComponent {
             
   
             localStorage.setItem('token', resp.token);
+            localStorage.setItem('usuario', resp.user.nombreUsuario);
 
             
             Swal.fire({

@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container mb-5">
     <div class="row clearfix">
         <div class="col-lg-12">
             <div class="card chat-app">
@@ -19,15 +19,14 @@
                     </div>
                     <div class="chat-history">
                         <ul class="m-b-0">
-                            <li  class="clearfix">                                
-                                <div class="message other-message float-right"> hola </div>
-                            </li>
-
                             <li  *ngFor="let chat of chats" class="clearfix">
                                 <div class="message-data">
-                                    <span class="message-data-time">{{chat.emisor}}:</span>
+                                    <span class="message-data-time" *ngIf="chat.emisor!=miName">{{chat.emisor}}:</span>
                                 </div>
+
                                 <div class="message"  >{{chat.contenido}}</div>                                    
+
+                                <div class="message" [ngClass]="{'my-message': chat.emisor!=miName, 'other-message': chat.emisor==miName , 'float-right': chat.emisor==miName}" >{{chat.contenido}}</div>                                    
                             </li>   
     
     
