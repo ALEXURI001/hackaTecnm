@@ -22,9 +22,9 @@ showGroup(id: number){
   return this.http.get<ModalGroup>(url)
 }
 
-registerGroup(){
+registerGroup(name: string, destino: string){
   const url= `${environment.urlBase}/grupos`
-  const body = {}
+  const body = {name, destino}
   return this.http.post(url, body)
 }
 
