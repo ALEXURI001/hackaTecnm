@@ -23,6 +23,9 @@
                                 <div class="message-data">
                                     <span class="message-data-time" *ngIf="chat.emisor!=miName">{{chat.emisor}}:</span>
                                 </div>
+
+                                <div class="message"  >{{chat.contenido}}</div>                                    
+
                                 <div class="message" [ngClass]="{'my-message': chat.emisor!=miName, 'other-message': chat.emisor==miName , 'float-right': chat.emisor==miName}" >{{chat.contenido}}</div>                                    
                             </li>   
     

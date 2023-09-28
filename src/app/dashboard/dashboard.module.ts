@@ -25,6 +25,7 @@ import { TucanGuiaComponent } from '../modules/tucan-guia/tucan-guia.component';
 import { ViajeroComponent } from '../modules/grupos-viajeros/viajero/viajero.component';
 import { GruposComponent } from '../modules/grupos-viajeros/grupos/grupos.component';
 import { CardModule } from 'primeng/card';
+import { SwiperModule } from 'swiper/angular';
 @NgModule({
   declarations: [
     GruposViajerosComponent,
@@ -51,6 +52,7 @@ import { CardModule } from 'primeng/card';
     SelectButtonModule,
     SidebarModule,
     CardModule,
+    SwiperModule
     
 
   ]

@@ -8,7 +8,6 @@ import { AuthComponent } from './auth/auth.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
 
-
 import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
@@ -20,17 +19,15 @@ import { SidebarModule } from 'primeng/sidebar';
 
 import { MapaInteractivoComponent } from './modules/mapa-interactivo/mapa-interactivo.component';
 import {GoogleMapsModule} from '@angular/google-maps'; 
-
-
 import { ButtonNavigationBarComponent } from './components/button-navigation-bar/button-navigation-bar.component';
 import { DockModule } from 'primeng/dock';
 
 import { TucansitoGuiaComponent } from './modules/tucansito-guia/tucansito-guia.component';
 
-import { GruposComponent } from './modules/grupos-viajeros/grupos/grupos.component';
 import { DialogModule } from 'primeng/dialog';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ChatGrupalComponent } from './modules/grupos-viajeros/grupos/chat-grupal/chat-grupal.component';
+import { SwiperModule } from 'swiper/angular';
 
 
 
@@ -41,15 +38,9 @@ import { ChatGrupalComponent } from './modules/grupos-viajeros/grupos/chat-grupa
     AuthComponent,
     NavbarComponent,
     ButtonNavigationBarComponent,
-
-     TucansitoGuiaComponent,
-    
-
-    
-
-
+    TucansitoGuiaComponent,
     MapaInteractivoComponent,
-                      ChatGrupalComponent,
+    ChatGrupalComponent,
                       
   
 
@@ -69,7 +60,8 @@ import { ChatGrupalComponent } from './modules/grupos-viajeros/grupos/chat-grupa
     GoogleMapsModule,
     DialogModule,
     InputSwitchModule,
-    DockModule
+    DockModule,
+    SwiperModule
 
   ],
   providers: [

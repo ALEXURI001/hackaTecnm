@@ -10,7 +10,7 @@ width="100%"
 [position]="{lat: marker.latitud, lng : marker.longitud}"
 [label]="{color: 'red', text: marker.nombre}"
 [title]="marker.nombre"
-[icon]="marker.tipo == 'Playas y Cuerpos de agua'? 'https://img.icons8.com/color/344/40/potters-wheel.png' : 'https://img.icons8.com/3d-fluency/40/restaurant.png' "
+[icon]="marker.tipo"
 #somemarker="mapMarker"
 (mapClick)="openInfoWindow(somemarker, marker)">
 </map-marker>
