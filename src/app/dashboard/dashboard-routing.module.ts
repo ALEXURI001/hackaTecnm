@@ -8,6 +8,7 @@ import { TucansitoGuiaComponent } from '../modules/tucansito-guia/tucansito-guia
 import { LugaresCercanosComponent } from '../modules/lugares-cercanos/lugares-cercanos.component';
 import { GruposViajerosComponent } from '../modules/grupos-viajeros/grupos-viajeros.component';
 import { TucanGuiaComponent } from '../modules/tucan-guia/tucan-guia.component';
+import { ChatGrupalComponent } from '../modules/grupos-viajeros/grupos/chat-grupal/chat-grupal.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path:'tucansitoGuia',
         component:TucansitoGuiaComponent
+      },
+      {
+        path:'chatGrupal',
+        component:ChatGrupalComponent
       }
 
     ]

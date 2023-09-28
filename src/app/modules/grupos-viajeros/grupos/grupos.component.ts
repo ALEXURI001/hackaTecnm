@@ -22,7 +22,7 @@ export class GruposComponent {
   destino: string = "";
   usuarios: Usuario[] = [];
   nombre: string = "";
-
+  
   ngOnInit() { 
     this.cities = [
     {name: 'Aguascalientes'},
@@ -88,5 +88,8 @@ export class GruposComponent {
 
   registerGroup(){
     this.visible2 = true;
+    this.gruposService.registerGroup(this.nombre, this.selectedCity.name).subscribe((resp) =>{
+      console.log(resp);
+    });
   }
 }
