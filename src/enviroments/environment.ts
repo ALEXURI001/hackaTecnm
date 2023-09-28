@@ -1,4 +1,4 @@
 export const environment = {
-  urlBase: 'http://172.20.10.4:3001/hackatec',
-  urlIA: 'http://172.20.10.4:4000/api'
+  urlBase: 'http://192.168.180.184:3001/hackatec',
+  urlIA: 'http://192.168.180.184:4000/api'
 };

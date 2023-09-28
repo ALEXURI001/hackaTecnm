@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { GruposService } from './grupos.service';
 import { Datos } from 'src/app/interfaces/grupos.interface';
 import { Usuario } from 'src/app/interfaces/modalGroup';
+import { AuthService } from 'src/app/auth/auth.service';
+import Swal from 'sweetalert2';
 interface City {
   name: string;
 }
@@ -22,6 +24,7 @@ export class GruposComponent {
   destino: string = "";
   usuarios: Usuario[] = [];
   nombre: string = "";
+
   
   ngOnInit() { 
     this.cities = [
@@ -60,7 +63,7 @@ export class GruposComponent {
 ];
     this.showAllGroups();
   }
-  constructor(private gruposService: GruposService) { }
+  constructor(private gruposService: GruposService, private authService: AuthService) { }
 
   showAllGroups(){
     this.gruposService.showGroups().subscribe((respon) =>{
@@ -85,11 +88,48 @@ export class GruposComponent {
       this.visible = true;
   }
 
+  showRegisterGroup(){
+    this.visible2 = true;
+
+  }
 
   registerGroup(){
-    this.visible2 = true;
-    this.gruposService.registerGroup(this.nombre, this.selectedCity.name).subscribe((resp) =>{
+    let arregloId = [];
+    arregloId.push( Number(localStorage.getItem('idUser')));
+    console.log(localStorage.getItem('idUser'));
+    
+   this.gruposService.registerGroup(this.nombre, this.selectedCity.name, arregloId).subscribe((resp) =>{
       console.log(resp);
+    });
+  }
+
+  unirse(grupos: number){
+    let arregloId = [];
+    arregloId.push( Number(localStorage.getItem('idUser')));
+
+    
+    
+    this.gruposService.unirse(grupos, arregloId).subscribe((resp) =>{
+      if(resp){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: `Gracias por unirte`,
+          showConfirmButton: false,
+          timer: 1500
+          
+        })
+      }
+      else{
+         Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: `Error al unirse`,
+              showConfirmButton: false,
+              timer: 1500
+            })
+      }
+      
     });
   }
 }

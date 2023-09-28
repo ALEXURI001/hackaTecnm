@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class WebSocketService {
+export class UserService {
 
-  constructor() { }
+constructor() { }
+
 }
