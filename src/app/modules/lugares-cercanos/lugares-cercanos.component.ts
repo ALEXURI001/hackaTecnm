@@ -1,5 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import { LugaresCercanosService } from './lugaresCercanos.service';
+import { Respuesta } from 'src/app/interfaces/tours.interface';
+import { environment } from 'src/enviroments/environment';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -11,6 +14,16 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 })
 export class LugaresCercanosComponent {
+
+  constructor( private lugaresCercanosService: LugaresCercanosService){}
+  url= `${environment.urlBase}/images/`;
+
+  ngOnInit() { 
+    this.showTours();
+  }
+
+  respuesta: Respuesta [] =[];
+
   swiperConfig: any = {
     effect: 'coverflow',
     autoplay: true,
@@ -45,4 +58,15 @@ export class LugaresCercanosComponent {
       }
     }
   }
+
+
+  showTours(){
+    this.lugaresCercanosService.showTours().subscribe((resp) => {
+      console.log(resp);
+      this.respuesta = resp.respuesta;
+      console.log(this.respuesta)
+    })
+  }
+
+
 }

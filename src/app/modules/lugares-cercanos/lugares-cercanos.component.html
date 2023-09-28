@@ -2,78 +2,18 @@
     <h1 class="flex justify-content-center text-tittle">Lugares Cercanos</h1>
 
     <div>
-
-
         <swiper [config]="swiperConfig">
-            <ng-template swiperSlide>
+            <ng-template swiperSlide *ngFor="let lugar of respuesta">
                 <div class="slide-container swiper slide-container1">
                     <div class="slide-content slide-content1">
                         <div class="card-wrapper swiper-wrapper">
                             <div class="card mt-3" style="width: 18rem;">
-                                <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
+                                <img [src]="url+lugar.imagenes" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">ssdasd</h5>
-                                    <p class="card-text" style="font-weight: bold;">Destino: </p>
-                                    <p-button label="Ver grupo"></p-button>
-                                    <p-button label="Unirse" styleClass="p-button-secondary"
-                                        [style]="{ 'margin-left': '.5em' }"></p-button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template swiperSlide>
-                <div class="slide-container swiper slide-container1">
-                    <div class="slide-content slide-content1">
-                        <div class="card-wrapper swiper-wrapper">
-                            <div class="card mt-3" style="width: 18rem;">
-                                <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">ssdasd</h5>
-                                    <p class="card-text" style="font-weight: bold;">Destino: </p>
-                                    <p-button label="Ver grupo"></p-button>
-                                    <p-button label="Unirse" styleClass="p-button-secondary"
-                                        [style]="{ 'margin-left': '.5em' }"></p-button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template swiperSlide>
-                <div class="slide-container swiper slide-container1">
-                    <div class="slide-content slide-content1">
-                        <div class="card-wrapper swiper-wrapper">
-                            <div class="card mt-3" style="width: 18rem;">
-                                <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">ssdasd</h5>
-                                    <p class="card-text" style="font-weight: bold;">Destino: </p>
-                                    <p-button label="Ver grupo"></p-button>
-                                    <p-button label="Unirse" styleClass="p-button-secondary"
-                                        [style]="{ 'margin-left': '.5em' }"></p-button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template swiperSlide>
-                <div class="slide-container swiper slide-container1">
-                    <div class="slide-content slide-content1">
-                        <div class="card-wrapper swiper-wrapper">
-                            <div class="card mt-3" style="width: 18rem;">
-                                <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">ssdasd</h5>
-                                    <p class="card-text" style="font-weight: bold;">Destino: </p>
-                                    <p-button label="Ver grupo"></p-button>
-                                    <p-button label="Unirse" styleClass="p-button-secondary"
-                                        [style]="{ 'margin-left': '.5em' }"></p-button>
+                                    <h5 class="card-title">{{lugar.nombre}}</h5>
+                                    <p class="card-text"> <strong>Horario:</strong> {{lugar.horario}}</p>
+                                    <p><strong>Dirección: </strong> {{lugar.direccion}}</p>
+                                    <p>{{lugar.descripcion}}</p>
 
                                 </div>
                             </div>

@@ -15,6 +15,7 @@ interface City {
 export class GruposComponent {
   visible: boolean = false;
   visible2: boolean = false;
+  visible3: boolean = false;
   grupos: Datos[] = [];
   cities!: City[];
 
