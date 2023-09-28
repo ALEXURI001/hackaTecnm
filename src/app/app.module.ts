@@ -24,7 +24,13 @@ import {GoogleMapsModule} from '@angular/google-maps';
 
 import { ButtonNavigationBarComponent } from './components/button-navigation-bar/button-navigation-bar.component';
 import { DockModule } from 'primeng/dock';
+
 import { TucansitoGuiaComponent } from './modules/tucansito-guia/tucansito-guia.component';
+
+import { GruposComponent } from './modules/grupos-viajeros/grupos/grupos.component';
+import { DialogModule } from 'primeng/dialog';
+import { InputSwitchModule } from 'primeng/inputswitch';
+
 
 
 @NgModule({
@@ -33,15 +39,16 @@ import { TucansitoGuiaComponent } from './modules/tucansito-guia/tucansito-guia.
     DashboardComponent,
     AuthComponent,
     NavbarComponent,
-
-    MapaInteractivoComponent,
-
     ButtonNavigationBarComponent,
+
      TucansitoGuiaComponent,
     
 
     
 
+
+    MapaInteractivoComponent
+  
 
   ],
   imports: [
@@ -57,6 +64,8 @@ import { TucansitoGuiaComponent } from './modules/tucansito-guia/tucansito-guia.
     InputTextModule,
     SidebarModule,
     GoogleMapsModule,
+    DialogModule,
+    InputSwitchModule,
     DockModule
 
   ],

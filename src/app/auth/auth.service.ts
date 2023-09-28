@@ -12,16 +12,19 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  url = `${environment.urlBase}/api/auth/login`
 
   login(NombreUsuario : string,  Contrasena: string){
+    const url = `${environment.urlBase}/api/auth/login`
 
     const body = {NombreUsuario, Contrasena}
     console.log(body);
     
-    return this.http.post<Login>(this.url,body)
+    return this.http.post<Login>(url,body)
 
   }
+
+
+
 
 
   validarToken (): Observable<any> {
@@ -39,5 +42,16 @@ export class AuthService {
     )
     ;
   }
+
+  registerUser(nombres: string, apellidos: string,  nombreUsuario : string,  contrasena: string, descripcion: string, destino: string, permitirBuscar: boolean){
+    const url= `${environment.urlBase}/usuarios`;
+    const body = {nombres, apellidos, nombreUsuario, contrasena, descripcion, destino, permitirBuscar}
+    console.log(body);
+    
+    return this.http.post<Login>(url,body)
+
+  }
+
+
 
 }
