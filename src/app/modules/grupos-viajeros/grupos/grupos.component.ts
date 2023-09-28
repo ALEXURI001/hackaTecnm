@@ -25,7 +25,7 @@ export class GruposComponent {
   //DATOS GRUPO
   nombreGrupo: string = "";
   destino: string = "";
-  usuarios: Usuario[] = [];
+  usuarios!: Usuario[] 
   nombre: string = "";
 
   
@@ -110,8 +110,14 @@ export class GruposComponent {
 
   unirse(grupos: number){
 
-    let arregloId = [];
-    arregloId.push( Number(localStorage.getItem('idUser')));
+    let arregloId: number[] =[]
+    
+    this.usuarios.forEach(element => {
+      
+      arregloId.push(element.id);
+
+    }); 
+      arregloId.push( Number(localStorage.getItem('idUser')));
 
     
     
@@ -128,7 +134,7 @@ export class GruposComponent {
           timer: 1500
           
         })
-
+        localStorage.removeItem('idUser')
         
       }
       else{
