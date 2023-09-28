@@ -57,31 +57,31 @@ export class MapaInteractivoComponent implements OnInit{
 
           resp.resultado.forEach(element => {
             if(element.tipo == 'Playas y Cuerpos de agua'){
-              element.tipo = 'https://img.icons8.com/clouds/100/beach.png'
+              element.tipo = 'https://img.icons8.com/clouds/40/beach.png'
             }
             else if(element.tipo == 'Restaurantes'){
-              element.tipo = 'https://img.icons8.com/clouds/100/tableware.png'
+              element.tipo = 'https://img.icons8.com/clouds/40/tableware.png'
             }
             else if(element.tipo == 'Museos'){
-              element.tipo = 'https://img.icons8.com/?size=80&id=K3bPrXXzyXG7&format=png'
+              element.tipo = 'https://img.icons8.com/?size=40&id=K3bPrXXzyXG7&format=png'
             }
             else if(element.tipo == 'Pueblos Mágicos'){
-              element.tipo = 'https://img.icons8.com/?size=80&id=r9OuDWO1CSBv&format=png'
+              element.tipo = 'https://img.icons8.com/?size=40&id=r9OuDWO1CSBv&format=png'
             }
             else if(element.tipo == 'Zonas Arqueológicas'){
-              element.tipo = 'https://img.icons8.com/?size=80&id=zohpfczbXkPa&format=png'
+              element.tipo = 'https://img.icons8.com/?size=40&id=zohpfczbXkPa&format=png'
             }
             else if(element.tipo == 'Tren Maya'){
-              element.tipo = 'https://img.icons8.com/?size=80&id=n7wPd9MELQ3y&format=png'
+              element.tipo = 'https://img.icons8.com/?size=40&id=n7wPd9MELQ3y&format=png'
             }
             else if(element.tipo == 'Hoteles'){
-              element.tipo = 'https://img.icons8.com/?size=80&id=ZfSAxhIwFUbs&format=png'
+              element.tipo = 'https://img.icons8.com/?size=40&id=ZfSAxhIwFUbs&format=png'
             }
             else if(element.tipo == 'Plazas y Parques'){
-              element.tipo = 'https://img.icons8.com/?size=80&id=g8998FYqoV23&format=png'
+              element.tipo = 'https://img.icons8.com/?size=40&id=g8998FYqoV23&format=png'
             }
             else if(element.tipo == 'Tours'){
-              element.tipo = 'https://img.icons8.com/?size=80&id=mlvH3UMWDdAa&format=png'
+              element.tipo = 'https://img.icons8.com/?size=40&id=mlvH3UMWDdAa&format=png'
             }
       
           

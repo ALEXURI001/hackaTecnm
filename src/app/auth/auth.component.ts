@@ -144,6 +144,7 @@ export class AuthComponent {
     registerUser(){
 
       this.authService.registerUser(this.nombres, this.apellidos, this.nombreUsuario, this.contrasena, this. descripcion, this.destino.name, this.visibleBusqueda).subscribe(
+       
         resp => {
           console.log(resp);
           if(resp.status) {
@@ -154,6 +155,12 @@ export class AuthComponent {
             timer: 1500
           })
           this.visible = false;
+          this.nombres = "";
+          this.apellidos = "";
+          this.nombreUsuario = "";
+          this.contrasena = "";
+          this.descripcion = "";
+
         }
           else{
             Swal.fire({
