@@ -31,6 +31,7 @@ import { GruposComponent } from './modules/grupos-viajeros/grupos/grupos.compone
 import { DialogModule } from 'primeng/dialog';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ChatGrupalComponent } from './modules/grupos-viajeros/grupos/chat-grupal/chat-grupal.component';
+import { VideollamadaComponent } from './modules/videollamada/videollamada.component';
 
 
 
@@ -50,6 +51,7 @@ import { ChatGrupalComponent } from './modules/grupos-viajeros/grupos/chat-grupa
 
     MapaInteractivoComponent,
                       ChatGrupalComponent,
+                      VideollamadaComponent,
                       
   
 
