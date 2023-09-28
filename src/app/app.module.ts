@@ -52,9 +52,10 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     InputTextModule,
     SidebarModule,
     GoogleMapsModule,
-    DockModule,
     DialogModule,
-    InputSwitchModule
+    InputSwitchModule,
+    DockModule
+
   ],
   providers: [
     MessageService,
