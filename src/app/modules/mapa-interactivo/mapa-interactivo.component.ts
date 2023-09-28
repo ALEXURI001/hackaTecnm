@@ -41,20 +41,6 @@ export class MapaInteractivoComponent implements OnInit{
 
   ngOnInit(): void {
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        // Obtener las coordenadas de la ubicación actual
-        const lat = position.coords.latitude;
-        const lng = position.coords.longitude;
-
-        // Inicializar el mapa centrado en la ubicación actual
-        if (this.map) {
-          console.log({ lat, lng })
-          this.map.center = { lat, lng };
-        }
-      });
-
-    }
     this.getAllArtesanos()
 
   } 

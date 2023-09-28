@@ -7,6 +7,7 @@ import { LoansComponent } from '../modules/loans-and-repayments/loans/loans.comp
 import { ConsultsComponent } from '../modules/consults/consults.component';
 import { UsersComponent } from '../modules/users/users.component';
 import { MapaInteractivoComponent } from '../modules/mapa-interactivo/mapa-interactivo.component';
+import { TucansitoGuiaComponent } from '../modules/tucansito-guia/tucansito-guia.component';
 
 const routes: Routes = [
 
@@ -32,9 +33,14 @@ const routes: Routes = [
       {
         path: 'loans',
         component: LoansComponent
-      },{
+      },
+      {
         path: 'map',
         component:MapaInteractivoComponent
+      },
+      {
+        path:'tucansitoGuia',
+        component:TucansitoGuiaComponent
       }
     ]
   }

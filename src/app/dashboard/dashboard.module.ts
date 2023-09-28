@@ -59,7 +59,7 @@ import { SidebarModule } from 'primeng/sidebar';
     PasswordModule,
     InputSwitchModule,
     SelectButtonModule,
-    SidebarModule
+    SidebarModule,
   ]
 })
 export class DashboardModule { }

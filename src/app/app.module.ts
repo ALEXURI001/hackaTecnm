@@ -24,6 +24,7 @@ import {GoogleMapsModule} from '@angular/google-maps';
 
 import { ButtonNavigationBarComponent } from './components/button-navigation-bar/button-navigation-bar.component';
 import { DockModule } from 'primeng/dock';
+import { TucansitoGuiaComponent } from './modules/tucansito-guia/tucansito-guia.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { DockModule } from 'primeng/dock';
     MapaInteractivoComponent,
 
     ButtonNavigationBarComponent,
+     TucansitoGuiaComponent,
     
 
     
