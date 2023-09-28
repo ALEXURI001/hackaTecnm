@@ -34,6 +34,9 @@ registerGroup(nombre: string, destino: string, usuarios: number []){
 nuevoMensaje(id: number, msj:Chat){
   const url= `${environment.urlBase}/grupos/msg/${id}`;
   return this.http.post(url, msj)
+}
+
+
 unirse(id: number, usuarios: number []){
   const url= `${environment.urlBase}/grupos/${id}`
   const body = {usuarios};
