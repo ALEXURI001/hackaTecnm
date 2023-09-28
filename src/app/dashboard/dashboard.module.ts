@@ -22,11 +22,16 @@ import { MapaInteractivoComponent } from '../modules/mapa-interactivo/mapa-inter
 import { GruposViajerosComponent } from '../modules/grupos-viajeros/grupos-viajeros.component';
 import { LugaresCercanosComponent } from '../modules/lugares-cercanos/lugares-cercanos.component';
 import { TucanGuiaComponent } from '../modules/tucan-guia/tucan-guia.component';
+import { ViajeroComponent } from '../modules/grupos-viajeros/viajero/viajero.component';
+import { GruposComponent } from '../modules/grupos-viajeros/grupos/grupos.component';
+import { CardModule } from 'primeng/card';
 @NgModule({
   declarations: [
     GruposViajerosComponent,
     LugaresCercanosComponent,
     TucanGuiaComponent,
+    ViajeroComponent,
+    GruposComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +49,8 @@ import { TucanGuiaComponent } from '../modules/tucan-guia/tucan-guia.component';
     PasswordModule,
     InputSwitchModule,
     SelectButtonModule,
-    SidebarModule
+    SidebarModule,
+    CardModule
   ]
 })
 export class DashboardModule { }

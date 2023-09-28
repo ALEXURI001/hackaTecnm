@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import Swal from 'sweetalert2';
-
+interface City {
+  name: string;
+}
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -11,12 +13,58 @@ import Swal from 'sweetalert2';
 export class AuthComponent {
 
 
+  visible: boolean = false;
   countries!: any[];
 
   selectedCountry!: string;
 
+  cities!: City[];
+
+  selectedCity!: City;
+
+
+
+
   ngOnInit() {
-  
+    this.cities = [
+      {name: 'Aguascalientes'},
+      {name: 'Baja California'},      
+      {name: 'Baja California Sur'},
+      {name: 'Campeche'},
+      {name: 'Coahuila'},
+      {name: 'Colima'},
+      {name: 'Chiapas'},
+      {name: 'Chihuahua'},
+      {name: 'Durango'},
+      {name: 'Distrito Federal'},
+      {name: 'Guanajuato'},
+      {name: 'Guerrero'},
+      {name: 'Hidalgo'},
+      {name: 'Jalisco'},
+      {name: 'México'},
+      {name: 'Michoacán'},
+      {name: 'Morelos'},
+      {name: 'Nayarit'},
+      {name: 'Nuevo León'},
+      {name: 'Oaxaca'},
+      {name: 'Puebla'},
+      {name: 'Querétaro'},
+      {name: 'Quintana Roo'},
+      {name: 'San Luis Potosí'},
+      {name: 'Sinaloa'},
+      {name: 'Sonora'},
+      {name: 'Tabasco'},
+      {name: 'Tamaulipas'},
+      {name: 'Tlaxcala'},
+      {name: 'Veracruz'},
+      {name: 'Yucatán'},
+      {name: 'Zacatecas'},
+
+
+
+
+
+  ];
   }
 
   constructor(
@@ -27,7 +75,19 @@ export class AuthComponent {
     username: string ="";
     password: string ="";
 
+    //USUARIO NUEVO
+    nombres: string = "";
+    apellidos: string = "";
+    nombreUsuario: string = "";
+    contrasena: string = "";
+    descripcion: string = "";
+    destino!: City ;
+    visibleBusqueda: boolean = false;
+    
 
+    showRegister() {
+        this.visible = true;
+    }
     login(){
       this.authService.login(this.username, this.password).subscribe(
         resp=>{
@@ -80,4 +140,32 @@ export class AuthComponent {
   
     }
 
+    registerUser(){
+
+      this.authService.registerUser(this.nombres, this.apellidos, this.nombreUsuario, this.contrasena, this. descripcion, this.destino.name, this.visibleBusqueda).subscribe(
+        resp => {
+          console.log(resp);
+          if(resp.status) {
+            Swal.fire({
+            icon: 'success',
+            title: '¡Usuario creado con éxito!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          this.visible = false;
+        }
+          else{
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: '¡Error al crear el usuario!',
+            })
+          }
+          
+        }
+      )
+    }
+
+
+ 
 }

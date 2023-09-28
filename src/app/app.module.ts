@@ -24,9 +24,9 @@ import {GoogleMapsModule} from '@angular/google-maps';
 
 import { ButtonNavigationBarComponent } from './components/button-navigation-bar/button-navigation-bar.component';
 import { DockModule } from 'primeng/dock';
-import { GruposViajerosComponent } from './modules/grupos-viajeros/grupos-viajeros.component';
-import { LugaresCercanosComponent } from './modules/lugares-cercanos/lugares-cercanos.component';
-import { TucanGuiaComponent } from './modules/tucan-guia/tucan-guia.component';
+import { GruposComponent } from './modules/grupos-viajeros/grupos/grupos.component';
+import { DialogModule } from 'primeng/dialog';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 
 @NgModule({
@@ -37,11 +37,7 @@ import { TucanGuiaComponent } from './modules/tucan-guia/tucan-guia.component';
     NavbarComponent,
     ButtonNavigationBarComponent,
     MapaInteractivoComponent
-    
-
-    
-
-
+  
   ],
   imports: [
     BrowserModule,
@@ -56,6 +52,8 @@ import { TucanGuiaComponent } from './modules/tucan-guia/tucan-guia.component';
     InputTextModule,
     SidebarModule,
     GoogleMapsModule,
+    DialogModule,
+    InputSwitchModule,
     DockModule
 
   ],
