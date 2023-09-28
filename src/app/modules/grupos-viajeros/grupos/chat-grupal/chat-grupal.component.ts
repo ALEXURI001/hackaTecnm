@@ -17,13 +17,13 @@ grupo!:Grupo
 chats!: Chat[];
 mensaje: string = '';
 
-miName=''
+miName: any = ""
 
 
 
 ngOnInit(): void {
 
-  this.miName
+  this.miName= localStorage.getItem('usuario')
   const intervalo$ = interval(300);
 
   intervalo$.pipe(take(5)).subscribe(() => {
@@ -39,7 +39,7 @@ ngOnInit(): void {
 
   const nvmsj: Chat ={
     contenido:this.mensaje,
-    emisor:"deme",
+    emisor:this.miName!,
     fecha: now
   }
   this.grupoService.nuevoMensaje(3,nvmsj).subscribe((resp) => {
