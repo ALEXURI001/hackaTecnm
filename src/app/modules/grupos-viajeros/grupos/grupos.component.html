@@ -1,14 +1,14 @@
 
 <div class="card d-flex flex-column align-items-center card-size">
 
-    <p-button label="Crear grupo" (click)="registerGroup()" [style]="{ marginTop: '1rem' }"></p-button>
+    <p-button label="Crear grupo" (click)="showRegisterGroup()" [style]="{ marginTop: '1rem' }"></p-button>
     <div class="card mt-3" style="width: 18rem;" *ngFor="let grupo of grupos">
         <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{grupo.nombre}}</h5>
             <p class="card-text" style="font-weight: bold;">Destino: {{grupo.destino}}</p>
                 <p-button label="Ver grupo" (click)="showgroup(grupo.id)"></p-button>
-                <p-button label="Unirse" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+                <p-button label="Unirse" (click)="unirse(grupo.id)" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
    
         </div>
     </div>
@@ -25,7 +25,10 @@
     <ul *ngFor="let usuario of usuarios">
         <li>{{usuario.nombres}} {{usuario.apellidos}}</li>
     </ul>
-  
+  <div class="d-flex flex-row"></div>
+    <p-button label="Charla" (click)="showRegisterGroup()" [style]="{ marginRight: '1rem' }"></p-button>
+    <a href="http://localhost:50946/"><p-button label="Llamada" ></p-button></a>
+
     <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="visible = false" label="Ok" styleClass="p-button-text"></p-button>
     </ng-template>
@@ -38,17 +41,17 @@
     <div class="field mb-3 mt-4">
         <div class="d-flex flex-column mt-2">
             <label for="name">Nombre</label>
-            <input type="text" pInputText id="name" [(ngModel)]="nombre" required autofocus />
+            <input type="text" pInputText [(ngModel)]="nombre" required />
         </div>
     </div>
 
     <span class="d-flex flex-column mt-2">
         <label for="password">Destino</label>
-        <p-dropdown appendTo="body" [options]="cities" [(ngModel)]="destino"
-            placeholder="Select a City" optionLabel="name" [style]="{'width':'100%'}" [filter]="true" filterBy="cities.name"></p-dropdown>
+        <p-dropdown appendTo="body" [options]="cities" [(ngModel)]="selectedCity"
+            placeholder="Select a City" optionLabel="name" [style]="{'width':'100%'}" [filter]="true" filterBy="cities"></p-dropdown>
     </span>
   
     <ng-template pTemplate="footer">
-        <p-button icon="pi pi-check" (click)="visible = false" label="Ok" styleClass="p-button-text"></p-button>
+        <p-button icon="pi pi-check" (click)="registerGroup()" label="Ok" styleClass="p-button-text"></p-button>
     </ng-template>
 </p-dialog>

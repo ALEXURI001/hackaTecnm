@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import Swal from 'sweetalert2';
+import { Login } from './auth.interface';
 interface City {
   name: string;
 }
@@ -85,14 +86,18 @@ export class AuthComponent {
     }
     login(){
       this.authService.login(this.username, this.password).subscribe(
-        resp=>{
+            resp =>{
           console.log(resp);
           if(resp.status){
+            localStorage.setItem('idUser', `${resp.user.id}`);
+            this.authService.idUser = resp.user.id;
+
             console.log("PRINTING ANSWEEER: ");
             console.log(resp);
+            console.log(this.authService.idUser);
+            
   
-  
-            localStorage.setItem('token', resp.accessToken!);
+            localStorage.setItem('token', resp.token);
 
             
             Swal.fire({
