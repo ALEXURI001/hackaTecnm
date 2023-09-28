@@ -1,11 +1,11 @@
-<div class="d-flex m-2 p-2">
-
-    <div class="d-flex flex-column p-2">
-        <h3>Destino</h3>
+<div class="d-flex flex-column m-2 p-2">
+    <h3>Destino</h3>
+    <div class="d-flex flex-row p-2">
         <p-dropdown appendTo="body" [filter]="true" [options]="cities" [(ngModel)]="selectedCity"
-            placeholder="Select a City" optionLabel="name"></p-dropdown>
+            placeholder="Select a City" optionLabel="name" [style]="{ marginRight: '1rem' }"></p-dropdown>
+            <p-button label="Buscar" (click)="filter()"></p-button>
+
     </div>
-    <p-button label="Buscar" (click)="filter()"></p-button>
 </div>
 <div class="card d-flex flex-column align-items-center" >
     <div class="card mt-3" style="width: 18rem;" *ngFor=" let usuario of resultados">
