@@ -25,13 +25,15 @@ import { TucanGuiaComponent } from '../modules/tucan-guia/tucan-guia.component';
 import { ViajeroComponent } from '../modules/grupos-viajeros/viajero/viajero.component';
 import { GruposComponent } from '../modules/grupos-viajeros/grupos/grupos.component';
 import { CardModule } from 'primeng/card';
+import { RoomComponent } from '../modules/room/room.component';
 @NgModule({
   declarations: [
     GruposViajerosComponent,
     LugaresCercanosComponent,
     TucanGuiaComponent,
     ViajeroComponent,
-    GruposComponent
+    GruposComponent,
+    RoomComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +52,8 @@ import { CardModule } from 'primeng/card';
     InputSwitchModule,
     SelectButtonModule,
     SidebarModule,
-    CardModule
+    CardModule,
+    
 
   ]
 })
