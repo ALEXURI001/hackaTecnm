@@ -8,6 +8,7 @@ import { TucansitoGuiaComponent } from '../modules/tucansito-guia/tucansito-guia
 import { LugaresCercanosComponent } from '../modules/lugares-cercanos/lugares-cercanos.component';
 import { GruposViajerosComponent } from '../modules/grupos-viajeros/grupos-viajeros.component';
 import { TucanGuiaComponent } from '../modules/tucan-guia/tucan-guia.component';
+import { RoomComponent } from '../modules/room/room.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: '', component: DashboardComponent,
     children:[
+      {
+        path: ':id',
+        component: RoomComponent,
+      },
       {
         path: 'map',
         component:MapaInteractivoComponent

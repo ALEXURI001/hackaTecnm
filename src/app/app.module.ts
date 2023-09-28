@@ -47,7 +47,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     
 
 
-    MapaInteractivoComponent
+    MapaInteractivoComponent,
+                      
   
 
   ],
