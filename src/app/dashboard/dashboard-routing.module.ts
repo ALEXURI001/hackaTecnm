@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { MapaInteractivoComponent } from '../modules/mapa-interactivo/mapa-interactivo.component';
+
+import { TucansitoGuiaComponent } from '../modules/tucansito-guia/tucansito-guia.component';
+
 import { LugaresCercanosComponent } from '../modules/lugares-cercanos/lugares-cercanos.component';
 import { GruposViajerosComponent } from '../modules/grupos-viajeros/grupos-viajeros.component';
 import { TucanGuiaComponent } from '../modules/tucan-guia/tucan-guia.component';
+
 
 const routes: Routes = [
 
@@ -27,6 +31,15 @@ const routes: Routes = [
         path: 'tucanGuia',
         component:TucanGuiaComponent
       },
+      {
+        path: 'map',
+        component:MapaInteractivoComponent
+      },
+      {
+        path:'tucansitoGuia',
+        component:TucansitoGuiaComponent
+      }
+
     ]
   }
 

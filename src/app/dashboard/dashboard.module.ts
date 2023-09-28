@@ -51,6 +51,7 @@ import { CardModule } from 'primeng/card';
     SelectButtonModule,
     SidebarModule,
     CardModule
+
   ]
 })
 export class DashboardModule { }
