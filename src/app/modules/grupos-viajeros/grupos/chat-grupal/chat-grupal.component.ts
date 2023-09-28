@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GruposService } from '../grupos.service';
 import { Chat, Grupo } from '../../../../interfaces/ia.interface';
 import { interval, take } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,14 +12,14 @@ import { interval, take } from 'rxjs';
 })
 export class ChatGrupalComponent {
 
-constructor( private grupoService:GruposService){}
+constructor( private grupoService:GruposService, private route: ActivatedRoute){}
 
 grupo!:Grupo 
 chats!: Chat[];
 mensaje: string = '';
 
 miName: any = ""
-
+idSala : number = 0;
 
 
 ngOnInit(): void {
@@ -29,6 +30,8 @@ ngOnInit(): void {
   intervalo$.pipe(take(5)).subscribe(() => {
     this.consultarmsj(); 
   });
+
+  this.idSala = Number(this.route.snapshot.paramMap.get('id'));
 }
   
 
@@ -42,7 +45,7 @@ ngOnInit(): void {
     emisor:this.miName!,
     fecha: now
   }
-  this.grupoService.nuevoMensaje(3,nvmsj).subscribe((resp) => {
+  this.grupoService.nuevoMensaje(this.idSala,nvmsj).subscribe((resp) => {
     return resp;
   })
   this.mensaje = '';
@@ -52,10 +55,11 @@ ngOnInit(): void {
 }
 
  consultarmsj(){
-   this.grupoService.showGroup(3).subscribe((resp) => {
+   this.grupoService.showGroup(this.idSala).subscribe((resp) => {
     this.grupo = resp;
     this.chats = this.grupo.resp.chat;
    });
 }
+
 
 }

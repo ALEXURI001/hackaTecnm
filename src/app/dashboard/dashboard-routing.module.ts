@@ -37,7 +37,7 @@ const routes: Routes = [
         component:TucansitoGuiaComponent
       },
       {
-        path:'chatGrupal',
+        path:'chatGrupal/:id',
         component:ChatGrupalComponent
       }
 

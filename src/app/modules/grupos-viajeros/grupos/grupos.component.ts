@@ -4,6 +4,7 @@ import { Datos } from 'src/app/interfaces/grupos.interface';
 import { Usuario } from 'src/app/interfaces/modalGroup';
 import { AuthService } from 'src/app/auth/auth.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 interface City {
   name: string;
 }
@@ -14,6 +15,7 @@ interface City {
 })
 export class GruposComponent {
   visible: boolean = false;
+  valorSala: number = 0;
   visible2: boolean = false;
   visible3: boolean = false;
   grupos: Datos[] = [];
@@ -64,7 +66,7 @@ export class GruposComponent {
 ];
     this.showAllGroups();
   }
-  constructor(private gruposService: GruposService, private authService: AuthService) { }
+  constructor(private gruposService: GruposService, private authService: AuthService, private router: Router) { }
 
   showAllGroups(){
     this.gruposService.showGroups().subscribe((respon) =>{
@@ -83,6 +85,8 @@ export class GruposComponent {
       this.destino = resp.resp.destino;
       this.usuarios = resp.resp.usuarios;
       
+      this.valorSala = grupos;
+
     })
 
       console.log(grupos);
@@ -105,6 +109,7 @@ export class GruposComponent {
   }
 
   unirse(grupos: number){
+
     let arregloId = [];
     arregloId.push( Number(localStorage.getItem('idUser')));
 
@@ -112,6 +117,9 @@ export class GruposComponent {
     
     this.gruposService.unirse(grupos, arregloId).subscribe((resp) =>{
       if(resp){
+
+
+
         Swal.fire({
           position: 'center',
           icon: 'success',
@@ -120,6 +128,8 @@ export class GruposComponent {
           timer: 1500
           
         })
+
+        
       }
       else{
          Swal.fire({
@@ -133,4 +143,13 @@ export class GruposComponent {
       
     });
   }
+
+  messages(){
+
+    this.router.navigateByUrl(`/dashboard/chatGrupal/${this.valorSala}`)
+    console.log(this.valorSala);
+    
+    
+  }
+
 }
