@@ -1,10 +1,9 @@
 <div class="card d-flex flex-column align-items-center">
-    <div class="card mt-3" style="width: 18rem;">
+    <div class="card mt-3" style="width: 18rem;" *ngFor="let grupo of grupos">
         <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+            <h5 class="card-title">{{grupo.nombre}}</h5>
+            <p class="card-text" style="font-weight: bold;">Destino: {{grupo.destino}}</p>
                 <p-button label="Ver grupo" (click)="showgroup()"></p-button>
                 <p-button label="Unirse" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
    

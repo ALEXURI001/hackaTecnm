@@ -7,21 +7,21 @@
     </div>
     <p-button label="Buscar" (click)="filter()"></p-button>
 </div>
-<div class="card d-flex flex-column align-items-center" *ngFor=" let usuario of resultados">
-    <div class="card mt-3" style="width: 18rem;">
+<div class="card d-flex flex-column align-items-center" >
+    <div class="card mt-3" style="width: 18rem;" *ngFor=" let usuario of resultados">
         <img [src]="url+usuario.imagen" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{usuario.nombres +' '+ usuario.apellidos}}</h5>
             <p class="card-text">{{usuario.descripcion}}</p>
             <p class="card-text" style="font-weight: bold;">Destino: {{usuario.destino}}</p>
 
-            <p-button label="Ver perfil" (click)="showTraveler()"></p-button>
-            <p-button label="Invitar" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+           <!-- <p-button label="Ver perfil" (click)="showTraveler()"></p-button>-->
+            <p-button label="Invitar"  [style]="{ 'margin-left': '.5em' }"></p-button>
         </div>
     </div>
 
 </div>
-
+<!--
 <p-dialog header="Header" [(visible)]="visible" [draggable]="false" [modal]="true" [style]="{ width: '90vw' }">
     <ng-template pTemplate="header">
         <span class="text-xl font-bold">Header Content</span>
@@ -36,4 +36,4 @@
     <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="visible = false" label="Ok" styleClass="p-button-text"></p-button>
     </ng-template>
-</p-dialog>
+</p-dialog>-->

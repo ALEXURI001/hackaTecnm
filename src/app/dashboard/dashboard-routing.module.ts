@@ -28,10 +28,6 @@ const routes: Routes = [
         component:GruposViajerosComponent
       },
       {
-        path: 'tucanGuia',
-        component:TucanGuiaComponent
-      },
-      {
         path: 'map',
         component:MapaInteractivoComponent
       },
