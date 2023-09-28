@@ -25,7 +25,6 @@ import { TucanGuiaComponent } from '../modules/tucan-guia/tucan-guia.component';
 import { ViajeroComponent } from '../modules/grupos-viajeros/viajero/viajero.component';
 import { GruposComponent } from '../modules/grupos-viajeros/grupos/grupos.component';
 import { CardModule } from 'primeng/card';
-import { RoomComponent } from '../modules/room/room.component';
 @NgModule({
   declarations: [
     GruposViajerosComponent,
@@ -33,7 +32,6 @@ import { RoomComponent } from '../modules/room/room.component';
     TucanGuiaComponent,
     ViajeroComponent,
     GruposComponent,
-    RoomComponent
   ],
   imports: [
     CommonModule,

@@ -3,6 +3,7 @@
     <div class="d-flex flex-row p-2">
         <p-dropdown appendTo="body" [filter]="true" [options]="cities" [(ngModel)]="selectedCity"
             placeholder="Select a City" optionLabel="name" [style]="{ marginRight: '1rem' }"></p-dropdown>
+            
             <p-button label="Buscar" (click)="filter()"></p-button>
 
     </div>
