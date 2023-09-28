@@ -13,10 +13,10 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
 
-  login(NombreUsuario : string,  Contrasena: string){
-    const url = `${environment.urlBase}/api/auth/login`
+  login(nombreUsuario : string,  contrasena: string){
+    const url = `${environment.urlBase}/auth/login`
 
-    const body = {NombreUsuario, Contrasena}
+    const body = {nombreUsuario, contrasena}
     console.log(body);
     
     return this.http.post<Login>(url,body)
