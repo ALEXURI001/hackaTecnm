@@ -17,14 +17,17 @@ grupo!:Grupo
 chats!: Chat[];
 mensaje: string = '';
 
+miName=''
 
 
 
 ngOnInit(): void {
+
+  this.miName
   const intervalo$ = interval(300);
 
   intervalo$.pipe(take(5)).subscribe(() => {
-    this.consultarmsj(); // Llama a la función que realiza la petición
+    this.consultarmsj(); 
   });
 }
   
