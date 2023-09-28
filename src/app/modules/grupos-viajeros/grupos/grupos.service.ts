@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Grupo } from 'src/app/interfaces/grupos.interface';
+import { Chat } from 'src/app/interfaces/ia.interface';
 import { ModalGroup } from 'src/app/interfaces/modalGroup';
 import { environment } from 'src/enviroments/environment';
 
@@ -26,6 +27,11 @@ registerGroup(name: string, destino: string){
   const url= `${environment.urlBase}/grupos`
   const body = {name, destino}
   return this.http.post(url, body)
+}
+
+nuevoMensaje(id: number, msj:Chat){
+  const url= `${environment.urlBase}/grupos/msg/${id}`;
+  return this.http.post(url, msj)
 }
 
 }
