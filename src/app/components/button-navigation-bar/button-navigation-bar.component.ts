@@ -34,7 +34,7 @@ export class ButtonNavigationBarComponent {
             {
                 label: 'Mi tucan guía',
                 icon: '../../assets/imgsNav/tucan.png',
-                routerLink: 'tucanGuia'
+                routerLink: 'tucansitoGuia'
             },
 
         ];

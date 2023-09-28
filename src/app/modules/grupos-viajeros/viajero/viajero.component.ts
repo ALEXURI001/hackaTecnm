@@ -17,11 +17,10 @@ export class ViajeroComponent {
   visible: boolean = false;
 
   cities!: City[];
-  url= `${environment.urlBase}/usuarios/`;
+  url= `${environment.urlBase}/images/`;
   selectedCity!: City;
 
   resultados: Resultado[] = [];
-
 
     constructor(private viajeroService: ViajeroService) { }
 
@@ -75,9 +74,9 @@ export class ViajeroComponent {
 
   filter(){
     this.viajeroService.filter(this.selectedCity.name).subscribe(
-      (respo) =>{
-        console.log(respo);
-        this.resultados = respo.resultado;
+      (resp) =>{
+        console.log(resp);
+        this.resultados = resp.resultado;
         console.log(this.resultados);
 
       }
