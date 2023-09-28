@@ -1,4 +1,7 @@
+
 <div class="card d-flex flex-column align-items-center card-size">
+
+    <p-button label="Crear grupo" (click)="registerGroup()" [style]="{ marginTop: '1rem' }"></p-button>
     <div class="card mt-3" style="width: 18rem;" *ngFor="let grupo of grupos">
         <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
         <div class="card-body">
@@ -22,6 +25,28 @@
     <ul *ngFor="let usuario of usuarios">
         <li>{{usuario.nombres}} {{usuario.apellidos}}</li>
     </ul>
+  
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="visible = false" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
+
+<p-dialog header="Header" [(visible)]="visible2" [draggable]="false" [modal]="true" [style]="{ width: '90vw' }">
+    <ng-template pTemplate="header">
+        <h1 class="text-xl font-bold" style="font-weight: bold;">Crear grupo</h1>
+    </ng-template>
+    <div class="field mb-3 mt-4">
+        <div class="d-flex flex-column mt-2">
+            <label for="name">Nombre</label>
+            <input type="text" pInputText id="name" [(ngModel)]="nombre" required autofocus />
+        </div>
+    </div>
+
+    <span class="d-flex flex-column mt-2">
+        <label for="password">Destino</label>
+        <p-dropdown appendTo="body" [options]="cities" [(ngModel)]="destino"
+            placeholder="Select a City" optionLabel="name" [style]="{'width':'100%'}" [filter]="true" filterBy="cities.name"></p-dropdown>
+    </span>
   
     <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="visible = false" label="Ok" styleClass="p-button-text"></p-button>

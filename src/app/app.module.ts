@@ -30,6 +30,7 @@ import { TucansitoGuiaComponent } from './modules/tucansito-guia/tucansito-guia.
 import { GruposComponent } from './modules/grupos-viajeros/grupos/grupos.component';
 import { DialogModule } from 'primeng/dialog';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { ChatGrupalComponent } from './modules/grupos-viajeros/grupos/chat-grupal/chat-grupal.component';
 
 
 
@@ -48,6 +49,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 
 
     MapaInteractivoComponent,
+                      ChatGrupalComponent,
                       
   
 
