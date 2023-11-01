@@ -11,7 +11,8 @@ export class ButtonNavigationBarComponent {
   items!: MenuItem[];
 
     position: string = 'bottom';
-
+    viewChat: boolean = false;
+    
 
 
     ngOnInit() {
@@ -34,7 +35,9 @@ export class ButtonNavigationBarComponent {
             {
                 label: 'Mi tucan guía',
                 icon: '../../assets/imgsNav/tucan.png',
-                routerLink: 'tucansitoGuia'
+                command: () => {
+                    this.viewChat = true;
+                }
             },
 
         ];

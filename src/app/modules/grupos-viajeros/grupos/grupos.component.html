@@ -1,22 +1,33 @@
-
-<div class="card d-flex flex-column align-items-center card-size">
-
-    <p-button label="Crear grupo" (click)="showRegisterGroup()" [style]="{ marginTop: '1rem' }"></p-button>
-    <div class="card mt-3" style="width: 18rem;" *ngFor="let grupo of grupos">
-        <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{grupo.nombre}}</h5>
-            <p class="card-text" style="font-weight: bold;">Destino: {{grupo.destino}}</p>
-                <p-button label="Ver grupo" (click)="showgroup(grupo.id)"></p-button>
-                <p-button label="Unirse" (click)="unirse(grupo.id)" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
-   
-        </div>
-    </div>
-    
-    <h1 class="mt-6 mb-8">Fin de los resultados</h1>
+<div class="center">
+    <p-button label="Crear grupo" (click)="showRegisterGroup()"
+        styleClass="p-button-raised p-button-text p-button-success"></p-button>
 </div>
 
-<p-dialog header="Header" [(visible)]="visible" [draggable]="false" [modal]="true" [style]="{ width: '90vw' }">
+<div class="d-flex flex-column align-content-center justify-content-center p-4">
+    <div>
+        <swiper [config]="swiperConfig">
+            <ng-template swiperSlide *ngFor=" let grupo of grupos">
+                <div class=" swiper slide-container1">
+                    <div class="slide-content slide-content1">
+                        <div class="card mt-3" style="width: 18rem;">
+                            <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{grupo.nombre}}</h5>
+                                <p class="card-text" style="font-weight: bold;">Destino: {{grupo.destino}}</p>
+                                <p-button label="Ver grupo" (click)="showgroup(grupo.id)" src = `${grupo.id}`></p-button>
+                                <p-button label="Unirse" (click)="unirse(grupo.id)" styleClass="p-button-secondary"
+                                    [style]="{ 'margin-left': '.5em' }"></p-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+    </div>
+</div>
+
+
+<p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '450px' }" styleClass="p-fluid">
     <ng-template pTemplate="header">
         <h1 class="text-xl font-bold" style="font-weight: bold;">{{nombreGrupo}}</h1>
     </ng-template>
@@ -25,16 +36,19 @@
     <ul *ngFor="let usuario of usuarios">
         <li>{{usuario.nombres}} {{usuario.apellidos}}</li>
     </ul>
-  <div class="d-flex flex-row"></div>
-    <p-button label="Charla" (click)="messages()"></p-button>
-    <a href="http://localhost:50946/"><p-button label="Llamada" ></p-button></a>
 
     <ng-template pTemplate="footer">
-        <p-button icon="pi pi-check" (click)="visible = false" label="Ok" styleClass="p-button-text"></p-button>
+        <p-button label="Charla" styleClass="p-button-success p-button-text" (click)="messages()"><i
+                class="fa-solid fa-comments"></i></p-button>
+        <a href="http://localhost:50946/"> <p-button label="Llamada" styleClass="p-button-danger p-button-text"><i
+                    class="fa-solid fa-phone"></i></p-button></a>
+        <p-button icon="pi pi-check" (click)="visible = false" label="Cerrar" styleClass="p-button-text"><i
+                class="fa-solid fa-xmark"></i></p-button>
     </ng-template>
 </p-dialog>
 
-<p-dialog header="Header" [(visible)]="visible2" [draggable]="false" [modal]="true" [style]="{ width: '90vw' }">
+<p-dialog header="Header" [(visible)]="visible2" [draggable]="false" [modal]="true" [style]="{ width: '450px' }"
+    styleClass="p-fluid">
     <ng-template pTemplate="header">
         <h1 class="text-xl font-bold" style="font-weight: bold;">Crear grupo</h1>
     </ng-template>
@@ -47,13 +61,18 @@
 
     <span class="d-flex flex-column mt-2">
         <label for="password">Destino</label>
-        <p-dropdown appendTo="body" [options]="cities" [(ngModel)]="selectedCity"
-            placeholder="Select a City" optionLabel="name" [style]="{'width':'100%'}" [filter]="true" filterBy="cities"></p-dropdown>
+        <p-dropdown appendTo="body" [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City"
+            optionLabel="name" [style]="{'width':'100%'}" [filter]="true" filterBy="cities"></p-dropdown>
     </span>
-  
+
     <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="registerGroup()" label="Ok" styleClass="p-button-text"></p-button>
     </ng-template>
 </p-dialog>
 
 
+<p-dialog [blockScroll]="true" [showHeader]="true" [(visible)]="viewChat" [modal]="true" [style]="{ width: '450px' }"
+    styleClass="p-fluid">
+    <app-chat-grupal></app-chat-grupal>
+
+</p-dialog>

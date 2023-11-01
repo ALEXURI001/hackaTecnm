@@ -1,5 +1,4 @@
 
-
 .agree{
     cursor: default;
     transition: all 400ms ease-in-out;
@@ -22,11 +21,16 @@
 
 .nav-item:hover{
     font-size: 1.1rem;
-    background: #7BB1F5;
+    background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
 }
 
 .offcanvas-size{
     height: 50px;
 }
 
+.img-responsive {
+    width: 12%;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+  }
 

@@ -1,4 +1,57 @@
 
+<div class="d-flex justify-content-center align-items-center mt-2" style="width: 100%;">
+    <p-card [style]="{ width: '380px'}">
+        <ng-template pTemplate="header">
+            <div class="d-flex p-3 border">
+                <div class="" style="width: 70px;">
+                    <img class="img-ia" src="https://media1.giphy.com/media/7VzgMsB6FLCilwS30v/200w.gif?cid=6c09b952t16z1t4vkhqt200p4vq2fafb5e0n9p7cz68cl4my&ep=v1_gifs_search&rid=200w.gif&ct=g" alt="avatar" width="60px">
+                </div>
+                <div class="d-flex flex-column ms-3">
+                    <div class="chat-about">
+                        <h4 class="mb-0">Tucansito Guia</h4>
+                        <h6 class="mb-0 ms-1">Tu mejor Guia</h6>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+
+        <p-scrollPanel [style]="{ width: '100%', height: '250px' }" styleClass="custombar1">
+            <div class="chat">
+                <div class="chat-history">
+                    <ul class="m-b-0">
+                        <li *ngIf="mensajeVisible!=''" class="clearfix">                                
+                            <div class="message other-message float-right"> {{mensajeVisible}} </div>
+                        </li>
+
+                        <li *ngIf="mensajeVisible!='' && respuestaIa==''">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="sr-only">Loading...</span>
+                              </div>
+                        </li>
+
+                        <li *ngIf="respuestaIa!=''" class="clearfix">
+                            <div class="message-data">
+                                <span class="message-data-time">Tucansito Guia:</span>
+                            </div>
+                            <div class="message my-message">{{respuestaIa}}</div>                                    
+                        </li>   
+                    </ul>
+                </div>
+            </div>
+        </p-scrollPanel>
+
+        <ng-template pTemplate="footer">
+            <div class="p-inputgroup">
+                <input type="text" pInputText [(ngModel)]="mensaje"  placeholder="Escribe y preciona enter para enviar"  (keyup.enter)="preguntar()"
+                    />
+                <button type="button" pButton icon="pi pi-refresh" styleClass="p-button-warn" (click)="preguntar()"><i
+                        class="fa-solid fa-paper-plane"></i></button>
+            </div>
+      
+        </ng-template>
+    </p-card>
+
+<!--
 <div class="container">
 <div class="row clearfix">
     <div class="col-lg-12">
@@ -50,3 +103,5 @@
     </div>
 </div>
 </div>
+
+-->

@@ -2,11 +2,36 @@
 <app-button-navigation-bar></app-button-navigation-bar>
 <div class="col-auto">
 </div>
-<main style="margin-top: 1rem;">
-    <div class="container-fluid " >
-     <router-outlet></router-outlet>
-    </div>
-  </main>
+<main style="margin-top: 4.4rem;">
+  <div class="container-fluid ">
 
- 
-  
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+
+
+<p-dialog header="Header" [(visible)]="showAlert" [modal]="true" [style]="{ width: '550px' }" styleClass="p-fluid">
+  <ng-template pTemplate="header">
+    <h1>Bienvenido</h1>
+  </ng-template>
+  <h3>Para continuar, sube una foto tuya</h3>
+
+  <div class="card flex justify-content-center">
+    <p-toast></p-toast>
+    <p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" (onUpload)="onUpload($event)" [multiple]="true" accept="image/*">
+        <ng-template pTemplate="content">
+            <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+            </ul>
+        </ng-template>
+    </p-fileUpload>
+</div>
+
+<h5>Garantizamos la seguridad de su información personal.</h5>
+  <ng-template pTemplate="footer">
+
+      <p-button icon="pi pi-check" (click)="showAlert = false" label="Cerrar" styleClass="p-button-text"><i
+              class="fa-solid fa-xmark"></i></p-button>
+  </ng-template>
+</p-dialog>

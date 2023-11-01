@@ -1,40 +1,70 @@
-<div class="d-flex flex-column m-2 p-2">
+<div class="center">
     <h3>Destino</h3>
-    <div class="d-flex flex-row p-2">
-        <p-dropdown appendTo="body" [filter]="true" [options]="cities" [(ngModel)]="selectedCity"
-            placeholder="Select a City" optionLabel="name" [style]="{ marginRight: '1rem' }"></p-dropdown>
-            
-            <p-button label="Buscar" (click)="filter()"></p-button>
+    <div class="d-flex flex-row">
+        <p-dropdown  styleClass="p-button-raised p-button-text p-button-success" appendTo="body" [filter]="true" [options]="cities" [(ngModel)]="selectedCity"
+            placeholder="Select a City" optionLabel="name" [style]="{ marginRight: '1rem', width: '100%' }"></p-dropdown>
+            <p-button icon="pi pi-search" (click)="filter()" styleClass="p-button-success"><i class="fa-solid fa-magnifying-glass"></i></p-button>
 
     </div>
 </div>
-<div class="card d-flex flex-column align-items-center" >
-    <div class="card mt-3" style="width: 18rem;" *ngFor=" let usuario of resultados">
-        <img [src]="url+usuario.imagen" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{usuario.nombres +' '+ usuario.apellidos}}</h5>
-            <p class="card-text">{{usuario.descripcion}}</p>
-            <p class="card-text" style="font-weight: bold;">Destino: {{usuario.destino}}</p>
 
-           <!-- <p-button label="Ver perfil" (click)="showTraveler()"></p-button>-->
-            <p-button label="Invitar"  [style]="{ 'margin-left': '.5em' }"></p-button>
-        </div>
+<div class="d-flex flex-column align-content-center justify-content-center">
+    <div>
+        <swiper [config]="swiperConfig">
+            <ng-template swiperSlide *ngFor=" let usuario of resultados">
+                <div class=" swiper slide-container1">
+                    <div class="slide-content slide-content1">
+                        <div class="profile-card mb-4">
+                            <div class="image">
+                                <img [src]="url+usuario.imagen" alt="" class="profile-pic">
+                            </div>
+                              
+                            <div class="data">
+                                <h2>{{usuario.nombres +' '+ usuario.apellidos}}</h2>
+                                <p-scrollPanel [style]="{ width: '100%', height: '75px' }">
+                                    <span>
+                                      {{usuario.descripcion}}
+                                    </span>
+  
+                                  </p-scrollPanel>
+                            </div>
+                            <div class="d-flex flex-row">
+                                <div class="info m-3">
+                                    <h3>Edad</h3>
+                                    <span>21</span>
+                                </div>
+                                <div class="info m-3">
+                                    <h3>Destino</h3>
+                                    <span> {{usuario.destino}}</span>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="btn">Mensaje</a>
+                                <a href="#" class="btn">Invitar</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </ng-template>
+
+        </swiper>
     </div>
-
 </div>
+
+
+
 <!--
-<p-dialog header="Header" [(visible)]="visible" [draggable]="false" [modal]="true" [style]="{ width: '90vw' }">
-    <ng-template pTemplate="header">
-        <span class="text-xl font-bold">Header Content</span>
-    </ng-template>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-    </p>
-    <ng-template pTemplate="footer">
-        <p-button icon="pi pi-check" (click)="visible = false" label="Ok" styleClass="p-button-text"></p-button>
-    </ng-template>
-</p-dialog>-->
+           <div class="d-flex flex-column m-1">
+           
+            <div class="d-flex flex-row p-2">
+                <p-dropdown appendTo="body" [filter]="true" [options]="cities" [(ngModel)]="selectedCity"
+                    placeholder="Select a City" optionLabel="name" [style]="{ marginRight: '1rem' }"></p-dropdown>
+        
+                <p-button label="Buscar" (click)="filter()"></p-button>
+        
+            </div>
+       
+        </div>
+    -->

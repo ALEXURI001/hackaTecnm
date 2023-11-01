@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
 }
 
-.cuerpo__animacion{
+.cuerpo__animacion {
   width: 75%;
   height: 75vh;
   background: rgba(255, 255, 255, 0.15);
@@ -42,45 +42,48 @@ body {
   border-top-right-radius: 0;
 }
 
-.img-logo{
-background-image: url('../../assets/LOGOIT.png');
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-width: 50%;
-border-radius: 8px 0 0 8px;
+.img-logo {
+  background-image: url('../../assets/cenote.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 50%;
+  border-radius: 8px 0 0 8px;
 }
 
-.logo{
- width: 10%;
+.logo {
+  width: 10%;
 }
 
-.img-responsive{
-  display: none;
+.img-responsive {
+
+  width: 50%;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
 }
 
-.form-login{
+.form-login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
 }
-.form-login div{
+
+.form-login div {
   width: 80%;
   margin: 8px;
 }
 
-.animacion{
+.animacion {
   border: none;
-  box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
-      rgba(0, 0, 0, 0.1);
+  box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px rgba(0, 0, 0, 0.1);
   border: 0 none;
   background: #ebf5fc;
 }
 
 @media screen and (max-width: 768px) {
- 
+
   .cuerpo__animacion {
     display: flex !important;
     flex-direction: column !important;
@@ -88,16 +91,21 @@ border-radius: 8px 0 0 8px;
     align-items: center;
     height: auto;
     padding: 13px 0;
-  } 
-  .form-login{
+  }
+
+  .form-login {
     width: 100%;
   }
-  .form-login div{
+
+  .form-login div {
     width: 80%;
     margin: 8px;
   }
-  .img-responsive{
+
+  .img-responsive {
     display: flex;
-    width: 50%;
+    width: 65%;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
   }
 }

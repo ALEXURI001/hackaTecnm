@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { TableBody } from 'primeng/table';
 import { Grupo } from 'src/app/interfaces/grupos.interface';
 import { Chat } from 'src/app/interfaces/ia.interface';

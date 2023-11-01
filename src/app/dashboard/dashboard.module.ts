@@ -13,8 +13,8 @@ import { DialogModule } from 'primeng/dialog';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ToastModule } from 'primeng/toast';
 import { InputSwitchModule } from 'primeng/inputswitch';
-
-
+import { TabViewModule } from 'primeng/tabview';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { PasswordModule } from 'primeng/password';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { SidebarModule } from 'primeng/sidebar';
@@ -26,6 +26,7 @@ import { ViajeroComponent } from '../modules/grupos-viajeros/viajero/viajero.com
 import { GruposComponent } from '../modules/grupos-viajeros/grupos/grupos.component';
 import { CardModule } from 'primeng/card';
 import { SwiperModule } from 'swiper/angular';
+import { ChatGrupalComponent } from '../modules/grupos-viajeros/grupos/chat-grupal/chat-grupal.component';
 @NgModule({
   declarations: [
     GruposViajerosComponent,
@@ -33,6 +34,7 @@ import { SwiperModule } from 'swiper/angular';
     TucanGuiaComponent,
     ViajeroComponent,
     GruposComponent,
+    ChatGrupalComponent
   ],
   imports: [
     CommonModule,
@@ -52,8 +54,9 @@ import { SwiperModule } from 'swiper/angular';
     SelectButtonModule,
     SidebarModule,
     CardModule,
-    SwiperModule
-    
+    SwiperModule,
+    TabViewModule,
+    ScrollPanelModule
 
   ]
 })
