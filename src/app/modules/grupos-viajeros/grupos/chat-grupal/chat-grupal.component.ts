@@ -3,6 +3,7 @@ import { GruposService } from '../grupos.service';
 import { Chat, Grupo } from '../../../../interfaces/ia.interface';
 import { interval, take } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { GruposComponent } from '../grupos.component';
 
 
 @Component({
@@ -10,16 +11,22 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './chat-grupal.component.html',
   styleUrls: ['./chat-grupal.component.css']
 })
+
 export class ChatGrupalComponent {
 
-constructor( private grupoService:GruposService, private route: ActivatedRoute){}
+constructor( 
+  private grupoService:GruposService, 
+  private route: ActivatedRoute,
+  ){}
 
 grupo!:Grupo 
 chats!: Chat[];
 mensaje: string = '';
-
+sala : any;
 miName: any = ""
 idSala : number = 0;
+viewChat: boolean = true;
+
 
 
 ngOnInit(): void {
@@ -30,10 +37,16 @@ ngOnInit(): void {
   intervalo$.pipe(take(5)).subscribe(() => {
     this.consultarmsj(); 
   });
-
+  //this.idSala = localStorage.getItem(parseInt('idSala'));  
   this.idSala = Number(this.route.snapshot.paramMap.get('id'));
+
 }
-  
+/*
+chatSala(){
+  this.idSala = Number(this.sala = localStorage.getItem('idSala'));
+  console.log("hola"+ this.idSala);
+}
+  */
 
 
  enviarmsj(){
@@ -60,6 +73,8 @@ ngOnInit(): void {
     this.chats = this.grupo.resp.chat;
    });
 }
+
+
 
 
 }

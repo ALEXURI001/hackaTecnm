@@ -1,0 +1,58 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+.slide-container1{
+  width: 100%;
+}
+.slide-content1{
+  margin: 0 20px;
+  overflow: hidden;
+  border-radius: 25px;
+  padding: 30px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+  
+  .swiper-navBtn::before,
+  .swiper-navBtn::after{
+    font-size: 40px;
+  }
+  .swiper-button-next{
+    right: 0;
+  }
+  .swiper-button-prev{
+    left: 0;
+  }
+  .swiper-pagination-bullet{
+    background-color: #6E93f7;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: #4070F4;
+  }
+
+  @media screen and (max-width: 768px) {
+  
+  .swiper-button-next, .swiper-button-prev{
+    display: none !important;
+  }
+  .slide-content1{
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 1.8rem;
+  }
+
+  .profile-card{
+    width: 100%;
+  }
+  
+  }

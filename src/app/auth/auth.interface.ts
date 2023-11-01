@@ -12,6 +12,7 @@ export interface User {
     nombreUsuario:  string;
     descripcion:    string;
     destino:        string;
+    edad:           number;
     permitirBuscar: boolean;
     contrasena:     string;
     imagen:         null;

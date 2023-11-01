@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { GruposService } from './grupos.service';
 import { Datos } from 'src/app/interfaces/grupos.interface';
 import { Usuario } from 'src/app/interfaces/modalGroup';
 import { AuthService } from 'src/app/auth/auth.service';
 import Swal from 'sweetalert2';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Router } from '@angular/router';
+import { GruposViajerosService } from '../grupos-viajeros.service';
 interface City {
   name: string;
 }
+
+SwiperCore.use([Navigation, Pagination, Autoplay]);
+
 @Component({
   selector: 'app-grupos',
   templateUrl: './grupos.component.html',
-  styleUrls: ['./grupos.component.css']
+  styleUrls: ['./grupos.component.css'],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class GruposComponent {
   visible: boolean = false;
@@ -21,55 +28,67 @@ export class GruposComponent {
   grupos: Datos[] = [];
   cities!: City[];
 
+  idSala: string = "";
   selectedCity!: City;
   //DATOS GRUPO
   nombreGrupo: string = "";
   destino: string = "";
-  usuarios!: Usuario[] 
+  usuarios!: Usuario[]
   nombre: string = "";
 
-  
-  ngOnInit() { 
-    this.cities = [
-    {name: 'Aguascalientes'},
-    {name: 'Baja California'},      
-    {name: 'Baja California Sur'},
-    {name: 'Campeche'},
-    {name: 'Coahuila'},
-    {name: 'Colima'},
-    {name: 'Chiapas'},
-    {name: 'Chihuahua'},
-    {name: 'Durango'},
-    {name: 'Distrito Federal'},
-    {name: 'Guanajuato'},
-    {name: 'Guerrero'},
-    {name: 'Hidalgo'},
-    {name: 'Jalisco'},
-    {name: 'México'},
-    {name: 'Michoacán'},
-    {name: 'Morelos'},
-    {name: 'Nayarit'},
-    {name: 'Nuevo León'},
-    {name: 'Oaxaca'},
-    {name: 'Puebla'},
-    {name: 'Querétaro'},
-    {name: 'Quintana Roo'},
-    {name: 'San Luis Potosí'},
-    {name: 'Sinaloa'},
-    {name: 'Sonora'},
-    {name: 'Tabasco'},
-    {name: 'Tamaulipas'},
-    {name: 'Tlaxcala'},
-    {name: 'Veracruz'},
-    {name: 'Yucatán'},
-    {name: 'Zacatecas'},
-];
+  viewChat!: boolean;
+
+
+
+  ngOnInit() {
+    this.cities = this.gruposViajerosService.getEstados();
     this.showAllGroups();
   }
-  constructor(private gruposService: GruposService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private gruposService: GruposService,
+    private authService: AuthService,
+    private router: Router,
+    private gruposViajerosService: GruposViajerosService,
+  ) { }
 
-  showAllGroups(){
-    this.gruposService.showGroups().subscribe((respon) =>{
+
+  swiperConfig: any = {
+    effect: 'coverflow',
+    autoplay: true,
+    slidesPerView: 3,
+    coverflowEffect: {
+      slideShadows: false,
+      rotate: 50,
+      stretch: 0,
+      modifier: 1
+    },
+    navigation: true,
+    pagination: { clickable: true },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      940: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      }
+    }
+  }
+
+  showAllGroups() {
+    this.gruposService.showGroups().subscribe((respon) => {
 
       this.grupos = respon.resp;
       console.log(this.grupos);
@@ -79,50 +98,50 @@ export class GruposComponent {
 
   showgroup(grupos: number) {
 
-    this.gruposService.showGroup(grupos).subscribe((resp) =>{
+    this.gruposService.showGroup(grupos).subscribe((resp) => {
       console.log(resp.resp.nombre);
       this.nombreGrupo = resp.resp.nombre;
       this.destino = resp.resp.destino;
       this.usuarios = resp.resp.usuarios;
-      
+
       this.valorSala = grupos;
 
     })
+    localStorage.setItem("idSala", this.valorSala.toString());
 
-      console.log(grupos);
-      this.visible = true;
+    this.visible = true;
   }
 
-  showRegisterGroup(){
+  showRegisterGroup() {
     this.visible2 = true;
 
   }
 
-  registerGroup(){
+  registerGroup() {
     let arregloId = [];
-    arregloId.push( Number(localStorage.getItem('idUser')));
+    arregloId.push(Number(localStorage.getItem('idUser')));
     console.log(localStorage.getItem('idUser'));
-    
-   this.gruposService.registerGroup(this.nombre, this.selectedCity.name, arregloId).subscribe((resp) =>{
+
+    this.gruposService.registerGroup(this.nombre, this.selectedCity.name, arregloId).subscribe((resp) => {
       console.log(resp);
     });
   }
 
-  unirse(grupos: number){
+  unirse(grupos: number) {
 
-    let arregloId: number[] =[]
-    
+    let arregloId: number[] = []
+
     this.usuarios.forEach(element => {
-      
+
       arregloId.push(element.id);
 
-    }); 
-      arregloId.push( Number(localStorage.getItem('idUser')));
+    });
+    arregloId.push(Number(localStorage.getItem('idUser')));
 
-    
-    
-    this.gruposService.unirse(grupos, arregloId).subscribe((resp) =>{
-      if(resp){
+
+
+    this.gruposService.unirse(grupos, arregloId).subscribe((resp) => {
+      if (resp) {
 
 
 
@@ -132,30 +151,37 @@ export class GruposComponent {
           title: `Gracias por unirte`,
           showConfirmButton: false,
           timer: 1500
-          
+
         })
         localStorage.removeItem('idUser')
-        
+
       }
-      else{
-         Swal.fire({
-              position: 'center',
-              icon: 'error',
-              title: `Error al unirse`,
-              showConfirmButton: false,
-              timer: 1500
-            })
+      else {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: `Error al unirse`,
+          showConfirmButton: false,
+          timer: 1500
+        })
       }
-      
+
     });
   }
 
-  messages(){
+  messages() {
 
     this.router.navigateByUrl(`/dashboard/chatGrupal/${this.valorSala}`)
     console.log(this.valorSala);
-    
-    
+
+
   }
 
+
+  showChat() {
+    this.viewChat = true;
+    localStorage.removeItem('idSala');
+    localStorage.setItem("idSala", this.valorSala.toString());
+   
+}
 }

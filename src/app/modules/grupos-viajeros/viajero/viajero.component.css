@@ -1,0 +1,129 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+.slide-container1{
+  width: 100%;
+}
+.slide-content1{
+  margin: 0 20px;
+  overflow: hidden;
+  border-radius: 25px;
+  padding: 30px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile-card{
+   Background: radial-gradient(circle at 50% -20.71%, #a4d8ec 0, #a7d7ef 6.25%, #abd6f1 12.5%, #b0d5f3 18.75%, #b5d3f4 25%, #bbd2f4 31.25%, #c1d0f4 37.5%, #c7cff3 43.75%, #cdcdf2 50%, #d3cbf0 56.25%, #d9caed 62.5%, #dec8ea 68.75%, #e3c7e7 75%, #e8c6e3 81.25%, #ecc5df 87.5%, #efc4da 93.75%, #f2c4d6 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    height: 70vh;
+    width: 85%;
+    border-radius: 25px;
+    padding: 20px;
+    border: 1px solid #ffffff40;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  }
+  .image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+  }
+  .image .profile-pic{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  }
+  .data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+  }
+  .data h2{
+    text-transform:uppercase;
+    text-align: center;
+    font-size: 33px;
+    font-weight: 600;
+  }
+  .data h3{
+    font-weight: 600;
+  }
+  
+  span{
+    font-size: 18px;
+  }
+  .row{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .row .info{
+    text-align: center;
+    padding: 0 20px;
+  }
+  .buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .buttons .btn{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    white-space: nowrap;
+    background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+  }
+  .buttons .btn:hover{
+    box-shadow: inset 0 5px 20px rgba(0,0,0,0.4);
+  }
+
+  
+  .swiper-navBtn::before,
+  .swiper-navBtn::after{
+    font-size: 40px;
+  }
+  .swiper-button-next{
+    right: 0;
+  }
+  .swiper-button-prev{
+    left: 0;
+  }
+  .swiper-pagination-bullet{
+    background-color: #6E93f7;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: #4070F4;
+  }
+
+  @media screen and (max-width: 768px) {
+  
+  .swiper-button-next, .swiper-button-prev{
+    display: none !important;
+  }
+  .slide-content1{
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 1.8rem;
+  }
+
+  .profile-card{
+    width: 100%;
+  }
+  
+  }

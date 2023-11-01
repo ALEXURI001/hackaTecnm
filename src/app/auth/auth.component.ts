@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import Swal from 'sweetalert2';
 import { Login } from './auth.interface';
+import { GruposViajerosService } from '../modules/grupos-viajeros/grupos-viajeros.service';
 interface City {
   name: string;
 }
@@ -23,49 +24,15 @@ export class AuthComponent {
 
   selectedCity!: City;
 
-
-
-
   ngOnInit() {
-    this.cities = [
-      {name: 'Aguascalientes'},
-      {name: 'Baja California'},      
-      {name: 'Baja California Sur'},
-      {name: 'Campeche'},
-      {name: 'Coahuila'},
-      {name: 'Colima'},
-      {name: 'Chiapas'},
-      {name: 'Chihuahua'},
-      {name: 'Durango'},
-      {name: 'Distrito Federal'},
-      {name: 'Guanajuato'},
-      {name: 'Guerrero'},
-      {name: 'Hidalgo'},
-      {name: 'Jalisco'},
-      {name: 'México'},
-      {name: 'Michoacán'},
-      {name: 'Morelos'},
-      {name: 'Nayarit'},
-      {name: 'Nuevo León'},
-      {name: 'Oaxaca'},
-      {name: 'Puebla'},
-      {name: 'Querétaro'},
-      {name: 'Quintana Roo'},
-      {name: 'San Luis Potosí'},
-      {name: 'Sinaloa'},
-      {name: 'Sonora'},
-      {name: 'Tabasco'},
-      {name: 'Tamaulipas'},
-      {name: 'Tlaxcala'},
-      {name: 'Veracruz'},
-      {name: 'Yucatán'},
-      {name: 'Zacatecas'},
-  ];
+    this.cities = this.gruposViajerosService.getEstados();
   }
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private gruposViajerosService: GruposViajerosService,
+
     ){}
 
     username: string ="";
@@ -79,7 +46,7 @@ export class AuthComponent {
     descripcion: string = "";
     destino!: City ;
     visibleBusqueda: boolean = false;
-    
+    edad!: number;
 
     showRegister() {
         this.visible = true;
@@ -92,7 +59,6 @@ export class AuthComponent {
             localStorage.setItem('idUser', `${resp.user.id}`);
             this.authService.idUser = resp.user.id;
 
-            console.log("PRINTING ANSWEEER: ");
             console.log(resp);
             console.log(this.authService.idUser);
             
@@ -104,7 +70,7 @@ export class AuthComponent {
             Swal.fire({
               position: 'center',
               icon: 'success',
-              title: `Bienvenido`,
+              title: `Bienvenido ${resp.user.nombres + " " + resp.user.apellidos}`,
               showConfirmButton: false,
               timer: 1500
               
@@ -143,7 +109,7 @@ export class AuthComponent {
 
     registerUser(){
 
-      this.authService.registerUser(this.nombres, this.apellidos, this.nombreUsuario, this.contrasena, this. descripcion, this.destino.name, this.visibleBusqueda).subscribe(
+      this.authService.registerUser(this.nombres, this.apellidos, this.nombreUsuario, this.contrasena, this. descripcion, this.destino.name, this.visibleBusqueda, this.edad).subscribe(
        
         resp => {
           console.log(resp);

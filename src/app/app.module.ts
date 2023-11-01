@@ -26,10 +26,15 @@ import { TucansitoGuiaComponent } from './modules/tucansito-guia/tucansito-guia.
 
 import { DialogModule } from 'primeng/dialog';
 import { InputSwitchModule } from 'primeng/inputswitch';
-import { ChatGrupalComponent } from './modules/grupos-viajeros/grupos/chat-grupal/chat-grupal.component';
 import { SwiperModule } from 'swiper/angular';
+import { FileUploadModule } from 'primeng/fileupload';
 
+import { ToastModule } from 'primeng/toast';
+import { CardModule } from 'primeng/card';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +45,7 @@ import { SwiperModule } from 'swiper/angular';
     ButtonNavigationBarComponent,
     TucansitoGuiaComponent,
     MapaInteractivoComponent,
-    ChatGrupalComponent,
-                      
+    LoadingComponent                
   
 
   ],
@@ -61,7 +65,12 @@ import { SwiperModule } from 'swiper/angular';
     DialogModule,
     InputSwitchModule,
     DockModule,
-    SwiperModule
+    SwiperModule,
+    FileUploadModule,
+    ToastModule,
+    CardModule,
+    ScrollPanelModule,
+    ProgressSpinnerModule
 
   ],
   providers: [

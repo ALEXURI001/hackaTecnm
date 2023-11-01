@@ -16,6 +16,7 @@ export class TucansitoGuiaComponent {
   mensajeVisible=''
   respuestaIa=''
 
+
 constructor(
   private tucansitoService:TucansitoGuiaService,
   private ubicacionService:UbicacionService

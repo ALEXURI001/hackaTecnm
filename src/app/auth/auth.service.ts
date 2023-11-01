@@ -17,11 +17,7 @@ export class AuthService {
 
   login(nombreUsuario : string,  contrasena: string){
     const url = `${environment.urlBase}/auth/login`
-
-    const body = {nombreUsuario, contrasena}
-
-    console.log(body);
-    
+    const body = {nombreUsuario, contrasena}    
     return this.http.post<Login>(url,body)
     
 
@@ -47,15 +43,11 @@ export class AuthService {
     ;
   }
 
-  registerUser(nombres: string, apellidos: string,  nombreUsuario : string,  contrasena: string, descripcion: string, destino: string, permitirBuscar: boolean){
+  registerUser(nombres: string, apellidos: string,  nombreUsuario : string,  contrasena: string, descripcion: string, destino: string, permitirBuscar: boolean, edad: number){
     const url= `${environment.urlBase}/usuarios`;
-    const body = {nombres, apellidos, nombreUsuario, contrasena, descripcion, destino, permitirBuscar}
-    console.log(body);
-    
+    const body = {nombres, apellidos, nombreUsuario, contrasena, descripcion, destino, permitirBuscar, edad}
     return this.http.post<Login>(url,body)
-
   }
-
 
 
 }
