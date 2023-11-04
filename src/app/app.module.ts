@@ -35,6 +35,9 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { LoadingComponent } from './components/loading/loading.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { AccordionModule } from 'primeng/accordion';
+import { TagModule } from 'primeng/tag';
 
 @NgModule({
   declarations: [
@@ -70,7 +73,10 @@ import { LoadingComponent } from './components/loading/loading.component';
     ToastModule,
     CardModule,
     ScrollPanelModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    NgxDropzoneModule,
+    AccordionModule,
+    TagModule
 
   ],
   providers: [

@@ -27,6 +27,10 @@ import { GruposComponent } from '../modules/grupos-viajeros/grupos/grupos.compon
 import { CardModule } from 'primeng/card';
 import { SwiperModule } from 'swiper/angular';
 import { ChatGrupalComponent } from '../modules/grupos-viajeros/grupos/chat-grupal/chat-grupal.component';
+import { AvatarGroupModule } from "primeng/avatargroup";
+import { AvatarModule } from 'primeng/avatar';
+import { TagModule } from 'primeng/tag';
+
 @NgModule({
   declarations: [
     GruposViajerosComponent,
@@ -56,7 +60,9 @@ import { ChatGrupalComponent } from '../modules/grupos-viajeros/grupos/chat-grup
     CardModule,
     SwiperModule,
     TabViewModule,
-    ScrollPanelModule
+    ScrollPanelModule,
+    AvatarModule,
+    AvatarGroupModule
 
   ]
 })
