@@ -9,16 +9,20 @@
             <ng-template swiperSlide *ngFor=" let grupo of grupos">
                 <div class=" swiper slide-container1">
                     <div class="slide-content slide-content1">
-                        <div class="card mt-3" style="width: 18rem;">
-                            <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{grupo.nombre}}</h5>
-                                <p class="card-text" style="font-weight: bold;">Destino: {{grupo.destino}}</p>
-                                <p-button label="Ver grupo" (click)="showgroup(grupo.id)" src = `${grupo.id}`></p-button>
-                                <p-button label="Unirse" (click)="unirse(grupo.id)" styleClass="p-button-secondary"
+                        <p-card header="{{grupo.nombre}}" [style]="{ width: '340px' }">
+                            <ng-template pTemplate="header">
+                                <img alt="Card" src="../../assets/playa.jpg" />
+                            </ng-template>
+                            <h5 class="card-text" style="font-weight: bold;">Destino: {{grupo.destino}}</h5>
+
+                            <ng-template pTemplate="footer">
+                                <p-button label="Ver grupo" styleClass="p-button-raised p-button-text p-button-help"  (click)="showgroup(grupo.id)" src = `${grupo.id}`></p-button>
+                                <p-button label="Unirse" styleClass="p-button-raised p-button-text p-button-success" (click)="unirse(grupo.id)"
                                     [style]="{ 'margin-left': '.5em' }"></p-button>
-                            </div>
-                        </div>
+                                </ng-template>
+                        </p-card>
+                        
+                      
                     </div>
                 </div>
             </ng-template>
@@ -31,10 +35,19 @@
     <ng-template pTemplate="header">
         <h1 class="text-xl font-bold" style="font-weight: bold;">{{nombreGrupo}}</h1>
     </ng-template>
-    <h3>{{destino}}</h3>
-    <h5>Participantes</h5>
+    <h3  style="text-align: center;">DESTINO: <h3>{{destino}}</h3></h3>
+    <div class="mb-3 d-flex justify-content-center align-items-center">
+        <img alt="Card" src="../../assets/playa.jpg"  width="50%" style="border-radius: 50%; height: 25vh;"/>
+    </div>
+    <h4 class="mb-2">Participantes</h4>
     <ul *ngFor="let usuario of usuarios">
-        <li>{{usuario.nombres}} {{usuario.apellidos}}</li>
+        <li style="list-style:none;">
+            <div class="usuarios">
+                <p-avatar image="{{url+usuario.imagen}}" styleClass="mr-1" shape="circle"></p-avatar>
+                <h4 class="ms-2">{{usuario.nombres}} {{usuario.apellidos}}</h4>  
+            </div>
+           
+        </li>
     </ul>
 
     <ng-template pTemplate="footer">
@@ -76,3 +89,18 @@
     <app-chat-grupal></app-chat-grupal>
 
 </p-dialog>
+
+
+<!--
+
+      <div class="card mt-3" style="width: 18rem;">
+                            <img src="../../assets/playa.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{grupo.nombre}}</h5>
+                                <p class="card-text" style="font-weight: bold;">Destino: {{grupo.destino}}</p>
+                                <p-button label="Ver grupo" (click)="showgroup(grupo.id)" src = `${grupo.id}`></p-button>
+                                <p-button label="Unirse" (click)="unirse(grupo.id)" styleClass="p-button-secondary"
+                                    [style]="{ 'margin-left': '.5em' }"></p-button>
+                            </div>
+                        </div>
+-->

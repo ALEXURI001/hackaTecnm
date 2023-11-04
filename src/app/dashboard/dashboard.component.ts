@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { ArchivosService } from '../services/archivos.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,16 +11,35 @@ import { MessageService } from 'primeng/api';
 })
 export class DashboardComponent {
   showAlert: boolean = true;
+  files: File[] = [];
+  http: any;
+  constructor(private messageService: MessageService, private archivosService: ArchivosService) {}
 
-  uploadedFiles: any[] = [];
 
-    constructor(private messageService: MessageService) {}
 
-    onUpload(event: any) {
-        for(let file of event.files) {
-            this.uploadedFiles.push(file);
-        }
+  onSelect(event: { addedFiles: any; }) {
+    const idUser = JSON.parse(localStorage.getItem('idUser')!);
 
-        this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
-    }
+    let formData = new FormData();
+    
+    this.files.push(...event.addedFiles);
+    console.log(this.files[0]);
+    formData.append('file', this.files[0]);
+    console.log(formData);
+    
+     this.archivosService.filter(idUser, formData).subscribe((resp) =>{
+      console.log(resp);
+     })
+  }
+
+/*
+   
+  
+  */
+  onRemove(event: File) {
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+
+
+    
 }

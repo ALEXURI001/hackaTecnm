@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Router } from '@angular/router';
 import { GruposViajerosService } from '../grupos-viajeros.service';
+import { environment } from 'src/enviroments/environment';
 interface City {
   name: string;
 }
@@ -38,7 +39,7 @@ export class GruposComponent {
 
   viewChat!: boolean;
 
-
+  url= `${environment.urlBase}/images/viajeros/`;
 
   ngOnInit() {
     this.cities = this.gruposViajerosService.getEstados();
@@ -103,7 +104,7 @@ export class GruposComponent {
       this.nombreGrupo = resp.resp.nombre;
       this.destino = resp.resp.destino;
       this.usuarios = resp.resp.usuarios;
-
+      console.log(this.usuarios);
       this.valorSala = grupos;
 
     })
@@ -182,6 +183,6 @@ export class GruposComponent {
     this.viewChat = true;
     localStorage.removeItem('idSala');
     localStorage.setItem("idSala", this.valorSala.toString());
-   
-}
+
+  }
 }

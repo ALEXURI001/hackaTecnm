@@ -24,7 +24,7 @@ export class ViajeroComponent {
   visible: boolean = false;
 
   cities!: City[];
-  url= `${environment.urlBase}/images/`;
+  url= `${environment.urlBase}/images/viajeros/`;
   selectedCity!: City;
 
   resultados: Resultado[] = [];

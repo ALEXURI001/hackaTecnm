@@ -15,23 +15,73 @@
   <ng-template pTemplate="header">
     <h1>Bienvenido</h1>
   </ng-template>
-  <h3>Para continuar, sube una foto tuya</h3>
+  <h3 style="text-align: center;" class="mb-4">Para continuar, sube una foto tuya</h3>
 
-  <div class="card flex justify-content-center">
-    <p-toast></p-toast>
-    <p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" (onUpload)="onUpload($event)" [multiple]="true" accept="image/*">
-        <ng-template pTemplate="content">
-            <ul *ngIf="uploadedFiles.length">
-                <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
-            </ul>
-        </ng-template>
-    </p-fileUpload>
-</div>
+  <div class="d-flex justify-content-center align-items-center mb-3">
+    <ngx-dropzone class="user" (change)="onSelect($event)" [multiple]="false" accept="image/jpeg,image/jpg,image/png">
+      <ngx-dropzone-label>Usuario</ngx-dropzone-label>
+      <ngx-dropzone-image-preview [removable]="true" (removed)="onRemove(f)" ngProjectAs="ngx-dropzone-preview"
+        *ngFor="let f of files" [file]="f">
+      </ngx-dropzone-image-preview>
+    </ngx-dropzone>
+  </div>
 
-<h5>Garantizamos la seguridad de su información personal.</h5>
-  <ng-template pTemplate="footer">
+  <p-accordion class="w-full">
+    <p-accordionTab>
+      <ng-template pTemplate="header">
+        <div class="flex align-items-center">
+          <span class="vertical-align-middle">Aviso de privacidad</span>
+          <i class="fa-solid fa-lock ms-2"></i>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <p>
+          <strong> Querido usuario:</strong>
+         
+        </p>
 
-      <p-button icon="pi pi-check" (click)="showAlert = false" label="Cerrar" styleClass="p-button-text"><i
-              class="fa-solid fa-xmark"></i></p-button>
+        <p>
+          Queremos asegurarte que tus datos personales y tu imagen de identificación están completamente seguros con
+          nosotros. La privacidad y la seguridad de tu información son de suma importancia para nosotros. Hemos
+          implementado medidas de seguridad robustas y tecnología avanzada para garantizar que tus datos estén
+          protegidos contra cualquier acceso no autorizado.</p>
+        <p>
+          Puedes confiar en nosotros para mantener la confidencialidad de tu información y garantizar que solo se
+          utilice de acuerdo con tus preferencias y necesidades. Si tienes alguna pregunta o inquietud relacionada con
+          la seguridad de tus datos, no dudes en contactarnos. Estamos aquí para brindarte el mejor servicio y
+          protección de tus datos.
+        </p>
+        <p>
+          Gracias por confiar en nosotros.
+          <br><br>
+        </p>
+
+        <p style="text-align: center;">
+          Atentamente, <br>
+          <strong>ConoceMeX</strong>
+        </p>
+
+      </ng-template>
+    </p-accordionTab>
+
+  </p-accordion> <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="showAlert = false" label="Cerrar" styleClass="p-button-text"><i
+        class="fa-solid fa-xmark"></i></p-button>
   </ng-template>
 </p-dialog>
+
+
+<!--
+"Querido usuario,
+
+Queremos asegurarte que tus datos personales y tu imagen de identificación están completamente seguros con nosotros. La privacidad y la seguridad de tu información son de suma importancia para nosotros. Hemos implementado medidas de seguridad robustas y tecnología avanzada para garantizar que tus datos estén protegidos contra cualquier acceso no autorizado.
+
+Puedes confiar en nosotros para mantener la confidencialidad de tu información y garantizar que solo se utilice de acuerdo con tus preferencias y necesidades. Si tienes alguna pregunta o inquietud relacionada con la seguridad de tus datos, no dudes en contactarnos. Estamos aquí para brindarte el mejor servicio y protección de tus datos.
+
+Gracias por confiar en nosotros.
+
+Atentamente,
+[Tu nombre o nombre de la empresa]"
+
+
+-->
