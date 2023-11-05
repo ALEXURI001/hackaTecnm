@@ -12,6 +12,7 @@ export interface Viajero {
     destino: string
     permitirBuscar: boolean
     status?: boolean
+    edad: number
     contrasena: string
     imagen?: string
     deletedAt: any

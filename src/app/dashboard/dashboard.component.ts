@@ -17,17 +17,25 @@ export class DashboardComponent {
 
 
   onSelect(event: { addedFiles: any; }) {
-    const idUser = JSON.parse(localStorage.getItem('idUser')!);
-
-    let formData = new FormData();
-    
     this.files.push(...event.addedFiles);
     console.log(this.files[0]);
+     
+  }
+
+  onSelectFile(event: { addedFiles: any; }) {
+    this.files.push(...event.addedFiles);
+    console.log(this.files[0]);
+     
+  }
+
+  upload(){
+    const idUser = JSON.parse(localStorage.getItem('idUser')!);
+    let formData = new FormData();
     formData.append('file', this.files[0]);
     console.log(formData);
-    
-     this.archivosService.filter(idUser, formData).subscribe((resp) =>{
+    this.archivosService.filter(idUser, formData).subscribe((resp) =>{
       console.log(resp);
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Foto actualizado con exito' });
      })
   }
 
