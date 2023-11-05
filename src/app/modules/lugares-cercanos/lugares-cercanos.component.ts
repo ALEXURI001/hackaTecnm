@@ -17,6 +17,8 @@ export class LugaresCercanosComponent {
 
   constructor( private lugaresCercanosService: LugaresCercanosService){}
   url= `${environment.urlBase}/images/`;
+  visible = false;
+
 
   ngOnInit() { 
     this.showTours();
@@ -68,5 +70,10 @@ export class LugaresCercanosComponent {
     })
   }
 
+
+  showTour(){
+    this.visible = true;
+
+  }
 
 }

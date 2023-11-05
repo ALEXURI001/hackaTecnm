@@ -1,6 +1,11 @@
 <div class="flex flex-column align-content-center justify-content-center p-2">
     <h1 class="flex justify-content-center text-tittle">Tours</h1>
 
+    <div class="d-flex flex-row-reverse">
+        <p-button label="Promocionar mi tour" (click)="showTour()" styleClass="p-button-raised p-button-text p-button-help"></p-button>
+
+    </div>
+
     <div>
         <swiper [config]="swiperConfig">
             <ng-template swiperSlide *ngFor="let lugar of respuesta">
@@ -27,7 +32,16 @@
 
 
 
-
+<p-dialog header="Contactanos" [(visible)]="visible" [modal]="true" [style]="{ width: '450px' }" styleClass="p-fluid">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <h3 style="text-align: center;" class="mb-4">¡Gracias por mostrar interés en ConoceMeX!</h3>
+        <h5 style="text-align: justify;" class="mb-4">Por favor, no dudes en ponerte en contacto con nosotros para obtener más información 
+        sobre como publicar tu tour y el proceso de solicitud. 
+        Puedes enviarnos un correo electrónico a:</h5>
+        <h5 style="text-align: center;">ConoceMeX.tecnm@mexicoLaboral.com</h5>
+    </div>
+    
+</p-dialog>
 <!--
 
     
