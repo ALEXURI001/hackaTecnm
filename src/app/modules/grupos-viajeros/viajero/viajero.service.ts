@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from 'src/app/interfaces/user.interface';
 import { Viajero } from 'src/app/interfaces/usuariosAll.interface';
 import { environment } from 'src/enviroments/environment';
 
@@ -13,6 +14,8 @@ export class ViajeroService {
     const url= `${environment.urlBase}/usuarios`;
     return this.http.get<Viajero>(url)
   }
+
+
 
   filter(destino: string){
     const url= `${environment.urlBase}/usuarios/destino/`;

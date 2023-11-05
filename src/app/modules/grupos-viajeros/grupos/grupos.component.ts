@@ -8,6 +8,7 @@ import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Router } from '@angular/router';
 import { GruposViajerosService } from '../grupos-viajeros.service';
 import { environment } from 'src/enviroments/environment';
+import { ArchivosService } from 'src/app/services/archivos.service';
 interface City {
   name: string;
 }
@@ -40,6 +41,7 @@ export class GruposComponent {
   viewChat!: boolean;
 
   url= `${environment.urlBase}/images/viajeros/`;
+  urlGrupos= `${environment.urlBase}/images/grupos/`;
 
   ngOnInit() {
     this.cities = this.gruposViajerosService.getEstados();
@@ -50,7 +52,14 @@ export class GruposComponent {
     private authService: AuthService,
     private router: Router,
     private gruposViajerosService: GruposViajerosService,
+    private archivosService: ArchivosService
   ) { }
+  files: File[] = [];
+  http: any;
+
+
+
+
 
 
   swiperConfig: any = {
@@ -91,8 +100,9 @@ export class GruposComponent {
   showAllGroups() {
     this.gruposService.showGroups().subscribe((respon) => {
 
+      console.log(respon);
+      
       this.grupos = respon.resp;
-      console.log(this.grupos);
     })
   }
 
@@ -104,7 +114,6 @@ export class GruposComponent {
       this.nombreGrupo = resp.resp.nombre;
       this.destino = resp.resp.destino;
       this.usuarios = resp.resp.usuarios;
-      console.log(this.usuarios);
       this.valorSala = grupos;
 
     })
@@ -118,13 +127,26 @@ export class GruposComponent {
 
   }
 
-  registerGroup() {
-    let arregloId = [];
-    arregloId.push(Number(localStorage.getItem('idUser')));
-    console.log(localStorage.getItem('idUser'));
+  
+  onSelect(event: { addedFiles: any; }) {
+    this.files.push(...event.addedFiles);
+  }
+  
+  onRemove(event: File) {
+    this.files.splice(this.files.indexOf(event), 1);
+  }
 
-    this.gruposService.registerGroup(this.nombre, this.selectedCity.name, arregloId).subscribe((resp) => {
+
+  registerGroup() {
+    let formData = new FormData();
+    let arregloId = [];
+
+    formData.append('file', this.files[0]);
+    arregloId.push(Number(localStorage.getItem('idUser')));
+
+    this.gruposService.registerGroup(this.nombre, this.selectedCity.name, arregloId, formData ).subscribe((resp) => {
       console.log(resp);
+      
     });
   }
 
@@ -138,8 +160,6 @@ export class GruposComponent {
 
     });
     arregloId.push(Number(localStorage.getItem('idUser')));
-
-
 
     this.gruposService.unirse(grupos, arregloId).subscribe((resp) => {
       if (resp) {

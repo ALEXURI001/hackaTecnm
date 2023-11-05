@@ -7,14 +7,15 @@
 
     <img class="img-responsive" src="../../assets/ConoceMeXnavbar.jpeg" alt="TECNM">
     
-    <div class="d-flex">
-      <p-tag severity="success" value="Verificado"><i class="fa-regular fa-circle-check me-2"></i></p-tag>
-      <img src="../../assets/imgsNav/user.png" alt="Bootstrap" width="35" style="border-radius: 50%;"
-      class="me-2">
+    <div class="d-flex justify-content-center align-items-center">
+      <p-button (click)="op.toggle($event)" styleClass="p-button-raised p-button-text p-button-success" [style]="{ 'height': '3.6rem' }">
+        <p-tag severity="success" value="Verificado" [style]="{ 'margin-right': '0.8rem' }"><i class="fa-regular fa-circle-check me-2"></i></p-tag>
+        <p-avatar image="{{url+photo}}" size="large" shape="circle"></p-avatar>
+      </p-button>
+      
     </div>
 
-   
-    
+
 
 
     <div class="offcanvas offcanvas-start param" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel"
@@ -60,9 +61,11 @@
         </ul>
 
         <div class="d-grid gap-2" style="margin-top: 7rem;">
-          <button class="btn btn-danger agree " type="button">LOG OUT <img class="ms-3"
+          <button class="btn btn-danger agree " type="button" (click)="exit()">LOG OUT <img class="ms-3"
+            
             src="../../assets/imgsNav/log-out.png"
             width="20px"></button>
+
         </div>
       </div>
 
@@ -70,4 +73,17 @@
   </div>
 </nav>
 
+
+
+<p-overlayPanel #op>
+
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <p-avatar image="{{url+photo}}" size="xlarge" shape="circle"></p-avatar>
+    <p-tag severity="success" value="Verificado" [style]="{ 'margin-bottom': '0.8rem' }"><i class="fa-regular fa-circle-check me-2"></i></p-tag>
+    <h5>{{nameUser + " " + lastUser}}</h5>
+    <h5>Destino: {{fromUser}}</h5>
+    <h5>Edad: {{age}}</h5>
+
+  </div>
+</p-overlayPanel>
 

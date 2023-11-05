@@ -38,6 +38,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AccordionModule } from 'primeng/accordion';
 import { TagModule } from 'primeng/tag';
+import { AvatarModule } from 'primeng/avatar';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { TagModule } from 'primeng/tag';
     ProgressSpinnerModule,
     NgxDropzoneModule,
     AccordionModule,
-    TagModule
+    TagModule,
+    AvatarModule,
+    OverlayPanelModule
 
   ],
   providers: [

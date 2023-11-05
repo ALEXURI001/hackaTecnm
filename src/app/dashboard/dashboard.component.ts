@@ -12,7 +12,6 @@ import { ArchivosService } from '../services/archivos.service';
 export class DashboardComponent {
   showAlert: boolean = true;
   files: File[] = [];
-  http: any;
   constructor(private messageService: MessageService, private archivosService: ArchivosService) {}
 
 
