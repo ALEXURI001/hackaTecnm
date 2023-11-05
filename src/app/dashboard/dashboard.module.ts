@@ -30,6 +30,8 @@ import { ChatGrupalComponent } from '../modules/grupos-viajeros/grupos/chat-grup
 import { AvatarGroupModule } from "primeng/avatargroup";
 import { AvatarModule } from 'primeng/avatar';
 import { TagModule } from 'primeng/tag';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { TagModule } from 'primeng/tag';
     TabViewModule,
     ScrollPanelModule,
     AvatarModule,
-    AvatarGroupModule
+    AvatarGroupModule,
+    OverlayPanelModule,
+    NgxDropzoneModule
 
   ]
 })

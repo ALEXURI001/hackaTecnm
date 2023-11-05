@@ -81,7 +81,6 @@ export class ViajeroComponent {
     this.viajeroService.viewUsers().subscribe(
       (resp) => {
           this.resultados = resp.resultado;
-          console.log(this.resultados);
       }
       )
     
@@ -92,9 +91,6 @@ export class ViajeroComponent {
       (resp) =>{
         console.log(resp);
         this.resultados = resp.resultado;
-        console.log(this.resultados);
-        
-
       }
     )
   }

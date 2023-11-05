@@ -6,6 +6,7 @@ export interface Grupo {
     id: number
     nombre: string
     destino: string
+    photo: string
     salaVideollamada: string
     chat: any
     deletedAt: any

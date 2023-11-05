@@ -1,4 +1,5 @@
 export interface Viajero {
+    status: boolean;
     resultado: Resultado[]
   }
   
@@ -10,6 +11,7 @@ export interface Viajero {
     descripcion: string
     destino: string
     permitirBuscar: boolean
+    status?: boolean
     contrasena: string
     imagen?: string
     deletedAt: any

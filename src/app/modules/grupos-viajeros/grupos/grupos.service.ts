@@ -24,9 +24,9 @@ showGroup(id: number){
   return this.http.get<ModalGroup>(url)
 }
 
-registerGroup(nombre: string, destino: string, usuarios: number []){
+registerGroup(nombre: string, destino: string, usuarios: number [], file: any){
   const url= `${environment.urlBase}/grupos`
-  const body = {nombre, destino, usuarios}
+  const body = {nombre, destino, usuarios, file}
   console.log(body);
   return this.http.post(url, body)
 }
