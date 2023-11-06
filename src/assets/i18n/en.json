@@ -1,0 +1,22 @@
+{
+    "AVISO": {
+      "BIENVENIDO": "Welcome",
+      "SELECT": "Select your language",
+      "USER": "User",
+      "SUBIR": "Upload photo",
+      "REMOVER": "Remove",
+      "TITLE1": "Identity verification",
+      "TEXT6": "Upload an ID of yours in order to verify that your identity is real",
+      "TITLE": "To continue, upload a photo of yourself",
+      "AVISOTITTLE": "Notice of Privacy",
+      "QUERIDO": "Dear user:",
+      "TEXT1": "We want to assure you that your personal data and your identification image are completely safe with us. The privacy and security of your information is of utmost importance to us. We have implemented robust security measures and advanced technology to ensure that your data is protected from any unauthorized access.",
+      "TEXT2": "You can trust us to keep your information confidential and ensure that it is only used in accordance with your preferences and needs. If you have any questions or concerns related to the security of your data, please do not hesitate to contact us. We are here to provide you with the best service and protection of your data.",
+      "TEXT3":"Thanks for trusting us.",
+      "TEXT4":"Yours Sincerely,",
+      "TEXT5":"ConoceMeX",
+      "VERIFICADO": "Verified"
+
+    }
+  }
+  

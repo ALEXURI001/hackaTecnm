@@ -3,6 +3,13 @@ import { UserService } from './user.service';
 import { Resultado } from 'src/app/interfaces/user.interface';
 import { environment } from 'src/enviroments/environment';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+
+
+interface City {
+  name: string;
+  code: string;
+}
 
 @Component({
   selector: 'app-navbar',
@@ -18,16 +25,31 @@ export class NavbarComponent {
   photo: string = '';
   age!: number;
   url= `${environment.urlBase}/images/viajeros/`;
+  langs: string[] = [];
+  cities!: City[];
 
+  selectedCity!: string;
   constructor(
-    private userService: UserService,
     private router: Router,
-    ){
+
+    private userService: UserService,
+    private translate: TranslateService) {
+      this.translate.use('en');
+      this.translate.setDefaultLang('en');
+      translate.addLangs(['en', 'es']);
+      this.langs = this.translate.getLangs();
   }
   ngOnInit() {
     this.getUser();
+    this.cities = [
+      { name: 'Español', code: 'es' },
+      { name: 'Ingles', code: 'en' },
+  ];
   }
 
+  selectLang(){
+    this.translate.use(this.selectedCity);
+  }
 
   exit(){
     localStorage.removeItem('idUser');

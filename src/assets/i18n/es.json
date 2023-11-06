@@ -1,0 +1,21 @@
+{
+    "AVISO": {
+      "BIENVENIDO": "Bienvenido",
+      "SELECT": "Selecciona tu idioma",
+      "USER": "Usuario",
+      "SUBIR": "Subir foto",
+      "REMOVER": "Remover",
+      "TITLE1": "Verificación de identidad",
+      "TEXT6": "Sube una identificación tuya con el fin de verificar que tu identidad sea real",
+      "TITLE": "Para continuar, sube una foto tuya",
+      "AVISOTITTLE": "Aviso de privacidad",
+      "QUERIDO": "Querido usuario:",
+      "TEXT1": "Queremos asegurarte que tus datos personales y tu imagen de identificación están completamente seguros con nosotros. La privacidad y la seguridad de tu información son de suma importancia para nosotros. Hemos implementado medidas de seguridad robustas y tecnología avanzada para garantizar que tus datos estén protegidos contra cualquier acceso no autorizado.",
+      "TEXT2": "Puedes confiar en nosotros para mantener la confidencialidad de tu información y garantizar que solo se utilice de acuerdo con tus preferencias y necesidades. Si tienes alguna pregunta o inquietud relacionada con la seguridad de tus datos, no dudes en contactarnos. Estamos aquí para brindarte el mejor servicio y protección de tus datos.",
+      "TEXT3":"Gracias por confiar en nosotros.",
+      "TEXT4":"Atentamente,",
+      "TEXT5":"ConoceMeX",
+      "VERIFICADO": "Verificado"
+    }
+  }
+  

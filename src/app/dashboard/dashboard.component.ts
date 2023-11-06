@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { ArchivosService } from '../services/archivos.service';
+import { TranslateService } from '@ngx-translate/core';
 
+interface City {
+  name: string;
+  code: string;
+}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -12,7 +17,33 @@ import { ArchivosService } from '../services/archivos.service';
 export class DashboardComponent {
   showAlert: boolean = true;
   files: File[] = [];
-  constructor(private messageService: MessageService, private archivosService: ArchivosService) {}
+  langs: string[] = [];
+  constructor(
+    private messageService: MessageService, 
+    private archivosService: ArchivosService,
+    private translate: TranslateService) {
+      this.translate.use('es');
+      this.translate.setDefaultLang('es');
+      translate.addLangs(['es', 'en']);
+      this.langs = this.translate.getLangs();
+    }
+
+    cities!: City[];
+
+    selectedCity: string ='es';
+
+    ngOnInit() {
+        this.cities = [
+            { name: 'Español', code: 'es' },
+            { name: 'Ingles', code: 'en' },
+        ];
+    }
+
+    selectLang(){
+      console.log(this.selectedCity);
+      
+      this.translate.use(this.selectedCity);
+    }
 
 
 
