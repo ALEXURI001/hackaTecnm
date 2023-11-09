@@ -17,7 +17,7 @@ export class MapaInteractivoComponent implements OnInit {
   pregunta: string = ""
   lugares: any[] = []
   status: boolean = false;
-  
+  ar: boolean = false;
   center = { lat: 23.800136, lng: -100.590540 };
   visible = false;
   //Mostrar en la tarjeta al seleccionar un marcador
@@ -110,7 +110,7 @@ export class MapaInteractivoComponent implements OnInit {
     this.id = content.id
     this.titulo = content.nombre
     this.horario = content.horario
-
+    this.ar = content.ar;
     this.imagenes = content.imagenes
 
     this.imagenes.forEach(element => {

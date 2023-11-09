@@ -47,7 +47,7 @@
        type="search" placeholder="Hazme una pregunta" aria-label="Search">
       <button class="btn btn-outline-success" type="submit" (click)="chambeagpt()" ><i
           class="fa-solid fa-question"></i></button>
-      <p-button (click)="showDialog()" label="AR" styleClass="p-button-raised p-button-text p-button-help"></p-button>
+      <p-button *ngIf="ar == true" (click)="showDialog()" label="AR" styleClass="p-button-raised p-button-text p-button-help"></p-button>
 
     </div>
     <div class="p-3">
@@ -77,11 +77,21 @@
 </p-overlayPanel>
 
 
-<p-dialog header="Header" [resizable]="true" [maximizable]="true" [(visible)]="visible"
+<p-dialog header="" [resizable]="true" [maximizable]="true" [(visible)]="visible"
   [style]="{width: '60vw', height: '85vh'}">
-    <iframe  *ngIf="id == '9'" src="https://mywebar.com/p/Project_1_ttfx6kn7j2" style="width: 100%; height: 98%;"
+    <iframe  *ngIf="id == '9'" src="https://mywebar.com/p/Project_4_7l16asal31" style="width: 100%; height: 98%;"
     allow="camera; accelerometer; vr"> Your browser does not support embedded content </iframe>
 
-    <iframe  *ngIf="id == '5'" src="https://mywebar.com/p/Project_2_ahoomlq753" style="width: 100%; height: 98%;"
+    <iframe  *ngIf="id == '11'" src="https://mywebar.com/p/Project_5_cecsismsqz" style="width: 100%; height: 98%;"
     allow="camera; accelerometer; vr"> Your browser does not support embedded content </iframe>
+    
+    <iframe  *ngIf="id == '23'" src="https://mywebar.com/p/Project_2_ahoomlq753" style="width: 100%; height: 98%;"
+    allow="camera; accelerometer; vr"> Your browser does not support embedded content </iframe>
+    
+    <iframe  *ngIf="id == '24'" src="https://mywebar.com/p/Project_3_23kmgr3nav" style="width: 100%; height: 98%;"
+    allow="camera; accelerometer; vr"> Your browser does not support embedded content </iframe>
+    
+    <iframe  *ngIf="id == '25'" src="https://mywebar.com/p/Project_1_ttfx6kn7j2" style="width: 100%; height: 98%;"
+    allow="camera; accelerometer; vr"> Your browser does not support embedded content </iframe>
+    
 </p-dialog>

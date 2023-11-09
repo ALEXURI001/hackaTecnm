@@ -4,6 +4,7 @@ export interface GetLugares {
 
 export interface Resultado {
     id:          number;
+    ar:          boolean;
     nombre:      string;
     horario:     string;
     direccion:   string;
