@@ -24,5 +24,11 @@ export class ViajeroService {
     return this.http.post<Viajero>(url,body)
   }
 
+  updateStatus(id: string, status: boolean){
+    const url= `${environment.urlBase}/usuarios/${id}/`;
+    const body = {status}
+    console.log(url);
+    return this.http.patch<Viajero>(url,body)
+  }
 
 }

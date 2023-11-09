@@ -10,7 +10,9 @@
     <div class="d-flex justify-content-center align-items-center">
      
       <p-button (click)="op.toggle($event)" styleClass="p-button-raised p-button-text p-button-success" [style]="{ 'height': '3.6rem' }">
-        <p-tag severity="success" value="{{ 'AVISO.VERIFICADO' | translate }}" [style]="{ 'margin-right': '0.8rem' }"><i class="fa-regular fa-circle-check me-2"></i></p-tag>
+        <p-tag *ngIf="status == false" severity="warning" value="NO VERIFICADO"></p-tag>
+        <p-tag *ngIf="status == true" severity="success" value="{{ 'AVISO.VERIFICADO' | translate }}" [style]="{ 'margin-right': '0.8rem' }"><i class="fa-regular fa-circle-check me-2"></i></p-tag>
+       
         <p-avatar image="{{url+photo}}" size="large" shape="circle"></p-avatar>
       </p-button>
       
@@ -80,7 +82,8 @@
 
   <div class="d-flex flex-column justify-content-center align-items-center">
     <p-avatar image="{{url+photo}}" size="xlarge" shape="circle"></p-avatar>
-    <p-tag severity="success" value="{{ 'AVISO.VERIFICADO' | translate }}" [style]="{ 'margin-bottom': '0.8rem' }"><i class="fa-regular fa-circle-check me-2"></i></p-tag>
+    <p-tag *ngIf="status == false" severity="warning" value="NO VERIFICADO"></p-tag>
+    <p-tag *ngIf="status == true" severity="success" value="{{ 'AVISO.VERIFICADO' | translate }}" [style]="{ 'margin-bottom': '0.8rem' }"><i class="fa-regular fa-circle-check me-2"></i></p-tag>
     <h5>{{nameUser + " " + lastUser}}</h5>
     <h5>Destino: {{fromUser}}</h5>
     <h5>Edad: {{age}}</h5>

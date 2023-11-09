@@ -83,10 +83,10 @@
       <ng-template pTemplate="content">
         <h3 style="text-align: center;" class="mb-4">{{ 'AVISO.TEXT6' | translate }}</h3>
 
-        <ngx-dropzone class="userFile" (change)="onSelectFile($event)" [multiple]="false" accept="image/jpeg,image/jpg,image/png">
+        <ngx-dropzone class="userFile" (change)="onSelectFileee($event)" [multiple]="false" accept="image/jpeg,image/jpg,image/png">
           <ngx-dropzone-label>Identificación</ngx-dropzone-label>
           <ngx-dropzone-image-preview [removable]="true" (removed)="onRemove(f)" ngProjectAs="ngx-dropzone-preview"
-            *ngFor="let f of files" [file]="f">
+            *ngFor="let f of filess" [file]="f">
           </ngx-dropzone-image-preview>
         </ngx-dropzone>
 
