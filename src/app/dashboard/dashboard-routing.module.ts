@@ -37,6 +37,10 @@ const routes: Routes = [
         component:TucansitoGuiaComponent
       },
       {
+        path:'RealidadVirtual',
+        component:TucanGuiaComponent
+      },
+      {
         path:'chatGrupal/:id',
         component:ChatGrupalComponent
       }
