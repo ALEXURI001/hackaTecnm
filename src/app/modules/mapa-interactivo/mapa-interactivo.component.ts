@@ -14,7 +14,7 @@ export class MapaInteractivoComponent implements OnInit{
   @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow;
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap| undefined;
   
-  
+  pregunta: string = ""
   lugares: any[] =[]
 
   center = {lat: 16.7585991, lng: -93.1731847};
@@ -121,11 +121,31 @@ export class MapaInteractivoComponent implements OnInit{
     this.links = content.links;
     this.direccion= content.direccion
 
-    console.log(content.descripcion)
     this.info.open(marker)
   }
 
+ async chambeagpt(){
+  console.log(this.pregunta)
+  
+if(this.pregunta != ""){
 
+  
+  const body = {
+    "messages": [{ "role": "system", "content": `You are a helpful tourist guide in ${this.titulo},mexico` },
+    { "role": "user", "content": `"${this.pregunta}"` }],
+    "model": "gpt-4"
+    }
+console.log(body)
+this.mapaService.getInfoLugarOPENIA(body).subscribe(
+  resp=>{
+    console.log(resp)
+  }
+)
+
+
+}
+ 
+  }
 
 
 }
