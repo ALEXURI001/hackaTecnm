@@ -53,8 +53,8 @@
     <ng-template pTemplate="footer">
         <p-button label="Charla" styleClass="p-button-success p-button-text" (click)="messages()"><i
                 class="fa-solid fa-comments"></i></p-button>
-        <a href="http://localhost:50946/"> <p-button label="Llamada" styleClass="p-button-danger p-button-text"><i
-                    class="fa-solid fa-phone"></i></p-button></a>
+        <p-button (click)="viewllamada = true" label="Llamada" styleClass="p-button-danger p-button-text"><i
+                    class="fa-solid fa-phone"></i></p-button>
         <p-button icon="pi pi-check" (click)="visible = false" label="Cerrar" styleClass="p-button-text"><i
                 class="fa-solid fa-xmark"></i></p-button>
     </ng-template>
@@ -99,6 +99,14 @@
     <app-chat-grupal></app-chat-grupal>
 
 </p-dialog>
+
+<p-dialog [resizable]="true" [maximizable]="true" [showHeader]="true" [(visible)]="viewllamada" [modal]="true" [style]="{ width: '480px', height: '90vh'}"
+    styleClass="p-fluid">
+    <iframe  src="http://localhost:50946/" style="width: 100%; height: 100%;"
+    allow="camera; accelerometer; vr"> Your browser does not support embedded content </iframe>
+
+</p-dialog>
+
 
 
 <!--
