@@ -1,8 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs';
 import { GetLugares } from 'src/app/interfaces/lugares.interface';
 import { environment } from 'src/enviroments/environment';
+import OpenAI from "openai";
+
+const openai = new OpenAI({apiKey:'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', dangerouslyAllowBrowser: true });
 
 @Injectable({
   providedIn: 'root'
@@ -44,4 +47,15 @@ export class MapaService {
 }
 
 
+getInfoLugarOPENIA (body:any){
+  return this.http.post<any>(`${this.url}/lugares/openIA`, body).pipe(
+    map(resp=>{
+      return resp;
+
+    })
+  )
 }
+
+
+}
+

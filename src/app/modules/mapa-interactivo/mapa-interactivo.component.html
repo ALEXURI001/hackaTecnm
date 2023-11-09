@@ -52,9 +52,12 @@ width="100%"
     </div>
 
     
-    <button type="button" class="btn btn-success">Ver Mas...</button>
 
-    
+
+    <div class="d-flex">
+      <input [(ngModel)]="pregunta" class="form-control me-2" type="search" placeholder="Hazme una pregunta" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit" (click)="chambeagpt()"><i class="fa-solid fa-question"></i></button>
+    </div>
 
 
 </map-info-window>
