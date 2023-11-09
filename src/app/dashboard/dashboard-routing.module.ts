@@ -43,6 +43,10 @@ const routes: Routes = [
       {
         path:'chatGrupal/:id',
         component:ChatGrupalComponent
+      },
+      {
+        path:'',
+        component:MapaInteractivoComponent
       }
 
     ]
