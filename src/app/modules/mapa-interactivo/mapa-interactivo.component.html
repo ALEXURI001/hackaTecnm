@@ -1,7 +1,7 @@
 <google-map [center]="center" [zoom]="zoom" height="80vh" width="100%">
 
   <map-marker *ngFor="let marker of lugares" [position]="{lat: marker.latitud, lng : marker.longitud}"
-    [label]="{color: 'red', text: marker.nombre}" [title]="marker.nombre" [icon]="marker.tipo" #somemarker="mapMarker"
+    [title]="marker.nombre" [icon]="marker.tipo" #somemarker="mapMarker"
     (mapClick)="openInfoWindow(somemarker, marker)">
   </map-marker>
 
