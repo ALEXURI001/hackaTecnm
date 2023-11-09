@@ -19,6 +19,7 @@ interface City {
 export class NavbarComponent {
   sidebarVisible4: boolean = true;
 
+  status: boolean = false;
   nameUser: string = '';
   lastUser: string = '';
   fromUser: string = '';
@@ -64,11 +65,14 @@ export class NavbarComponent {
   getUser(){
     const idUser = JSON.parse(localStorage.getItem('idUser')!);
     this.userService.getUsers(idUser).subscribe((resp) => {
+      console.log(resp);
+      
       this.nameUser = resp.Resultado.nombres;
       this.lastUser = resp.Resultado.apellidos;
       this.fromUser = resp.Resultado.destino;
       this.photo = resp.Resultado.imagen;
       this.age = resp.Resultado.edad;
+      this.status = resp.Resultado.status;
     });
   }
 }
