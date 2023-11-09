@@ -16,7 +16,7 @@ export class MapaInteractivoComponent implements OnInit{
   
   pregunta: string = ""
   lugares: any[] =[]
-
+  status: boolean = false;
   center = {lat: 16.7585991, lng: -93.1731847};
 
   //Mostrar en la tarjeta al seleccionar un marcador
@@ -28,7 +28,7 @@ export class MapaInteractivoComponent implements OnInit{
   imagenes2: any[]=[]
   horario=''
   direccion= ''
-
+ mensaje: string = '';
 
   zoom = 12;
   display?: google.maps.LatLngLiteral;
@@ -136,9 +136,13 @@ if(this.pregunta != ""){
     "model": "gpt-4"
     }
 console.log(body)
+this.status = false;
+this.mensaje = "";
 this.mapaService.getInfoLugarOPENIA(body).subscribe(
   resp=>{
     console.log(resp)
+    this.mensaje = resp;
+    this.status = true;
   }
 )
 
