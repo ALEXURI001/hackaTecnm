@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import io, { Socket } from 'socket.io-client';
 import { environment } from 'src/enviroments/environment';
 
-const wsServer = "http://localhost:80"
+const wsServer = "http://10.54.1.137:80"
 
 @Injectable({
   providedIn: 'root'

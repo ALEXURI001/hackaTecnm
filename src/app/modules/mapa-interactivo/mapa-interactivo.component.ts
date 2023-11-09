@@ -146,6 +146,7 @@ export class MapaInteractivoComponent implements OnInit {
           console.log(resp)
           this.mensaje = resp;
           this.status = true;
+          this.pregunta = "";
         }
       )
 
