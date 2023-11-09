@@ -27,6 +27,7 @@ export class GruposComponent {
   valorSala: number = 0;
   visible2: boolean = false;
   visible3: boolean = false;
+  viewllamada: boolean = false;
   grupos: Datos[] = [];
   cities!: City[];
 
