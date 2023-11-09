@@ -10,6 +10,7 @@ export interface ModalGroup {
     chat: Chat[]
     deletedAt: any
     usuarios: Usuario[]
+    photo: string
   }
   
   export interface Chat {

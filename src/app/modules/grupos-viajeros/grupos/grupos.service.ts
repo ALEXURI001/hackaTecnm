@@ -24,10 +24,13 @@ showGroup(id: number){
   return this.http.get<ModalGroup>(url)
 }
 
-registerGroup(nombre: string, destino: string, usuarios: number [], file: any){
+uploadFile(file: any){
+  const url= `${environment.urlBase}/grupos/uploadImage/1`
+  return this.http.post(url, file)
+}
+
+createGroup(body:any){
   const url= `${environment.urlBase}/grupos`
-  const body = {nombre, destino, usuarios, file}
-  console.log(body);
   return this.http.post(url, body)
 }
 

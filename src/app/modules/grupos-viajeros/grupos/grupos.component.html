@@ -37,7 +37,7 @@
     </ng-template>
     <h3  style="text-align: center;">DESTINO: <h3>{{destino}}</h3></h3>
     <div class="mb-3 d-flex justify-content-center align-items-center">
-        <img alt="Card" src="../../assets/playa.jpg"  width="50%" style="border-radius: 50%; height: 25vh;"/>
+        <img alt="Card" [src]="urlGrupos+foto"  width="50%" style="border-radius: 50%; height: 25vh;"/>
     </div>
     <h4 class="mb-2">Integrantes</h4>
     <ul *ngFor="let usuario of usuarios">
