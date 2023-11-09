@@ -40,6 +40,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { TagModule } from 'primeng/tag';
 import { AvatarModule } from 'primeng/avatar';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { FieldsetModule } from 'primeng/fieldset';
 
 
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
@@ -89,6 +90,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TagModule,
     AvatarModule,
     OverlayPanelModule,
+    FieldsetModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
