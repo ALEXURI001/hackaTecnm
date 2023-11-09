@@ -20,6 +20,8 @@ export class MapaInteractivoComponent implements OnInit {
   ar: boolean = false;
   center = { lat: 23.800136, lng: -100.590540 };
   visible = false;
+  video1: boolean = false;
+  video2: boolean = false;
   //Mostrar en la tarjeta al seleccionar un marcador
   titulo = ''
   descripcion = ''
@@ -156,6 +158,12 @@ export class MapaInteractivoComponent implements OnInit {
 
   }
 
+  showDialogRV(){
+    this.video1 = true;
+  }
+  showDialogRV1(){
+    this.video2 = true;
+  }
 
   showDialog() {
     this.visible = true;
