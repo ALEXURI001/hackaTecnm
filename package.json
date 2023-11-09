@@ -27,7 +27,6 @@
     "dropzone": "^6.0.0-beta.2",
     "jquery": "^3.6.4",
     "ngx-dropzone": "^3.1.0",
-    "ngx-socket-io": "^3.0.1",
     "peerjs": "^1.5.1",
     "primeng": "^15.4.1",
     "rxjs": "~7.5.0",
@@ -35,7 +34,9 @@
     "swiper": "^8.4.7",
     "tslib": "^2.3.0",
     "uuid": "^9.0.1",
-    "zone.js": "~0.12.0"
+    "zone.js": "~0.12.0",
+    "socket.io-client": "^4.7.2"
+
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.5",

@@ -37,6 +37,7 @@ export class GruposComponent {
   destino: string = "";
   usuarios!: Usuario[]
   nombre: string = "";
+  foto: string=""
 
   viewChat!: boolean;
 
@@ -112,6 +113,7 @@ export class GruposComponent {
     this.gruposService.showGroup(grupos).subscribe((resp) => {
       console.log(resp.resp.nombre);
       this.nombreGrupo = resp.resp.nombre;
+      this.foto= resp.resp.photo;
       this.destino = resp.resp.destino;
       this.usuarios = resp.resp.usuarios;
       this.valorSala = grupos;
@@ -139,13 +141,37 @@ export class GruposComponent {
 
   registerGroup() {
     let formData = new FormData();
-    let arregloId = [];
+    let arregloId :any = [];
 
     formData.append('file', this.files[0]);
     arregloId.push(Number(localStorage.getItem('idUser')));
 
-    this.gruposService.registerGroup(this.nombre, this.selectedCity.name, arregloId, formData ).subscribe((resp) => {
-      console.log(resp);
+    this.gruposService.uploadFile(formData).subscribe((resp:any) => {
+      
+      if(resp.status){
+
+        const body= {nombre:this. nombre, destino: this.selectedCity.name, usuarios:arregloId, photo:resp.file}
+
+        this.gruposService.createGroup(body).subscribe(
+          (result:any)=>{
+
+            if(result.status){
+              this.visible2 = false;
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: `Grupo Creado`,
+                showConfirmButton: false,
+                timer: 1500
+      
+              })
+              
+            }
+
+          }
+        )
+
+      }
       
     });
   }
